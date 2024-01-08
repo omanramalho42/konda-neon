@@ -8,10 +8,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        'growlight': '0px 0px 8px 2px #FFC607',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+          'home-pattern': "url('../assets/img/background.png')",
       },
     },
   },
