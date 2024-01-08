@@ -1,8 +1,8 @@
 export default function Home() {
   return (
     <main className='flex xl:flex-row flex-col-reverse mt-20 justify-center items-center text-center'>
-      <div className='2xl:w-[50vw] w-full mt-[80px]'>
-        <div className='flex 2xl:mx-32 mx-5 flex-col space-y-10'>
+      <div className='2xl:w-[50vw] w-full md:mt-[80px] mt-[50px]'>
+        <div className='flex 2xl:mx-32 mx-5 flex-col md:space-y-10 space-y-6'>
           <p 
             className='text-lg uppercase 2xl:text-start text-center 2xl:w-[450px] shadow-[#FFC607] text-[#FFC607] tracking-[6px]' 
             style={{ textShadow: '0px 0px 8px #FFC607' }}
