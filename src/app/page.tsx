@@ -30,7 +30,7 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <div className="2xl:w-[50vw] w-full h-[93vh] bg-no-repeat bg-cover 3xl:bg-right-top sm:bg-center bg-origin-content scale-105 sm:scale-100 bg-black bg-small bg-home-pattern" />
+      <div className="2xl:w-[50vw] z-10 w-full h-[93vh] bg-no-repeat bg-cover 3xl:bg-right-top sm:bg-center bg-origin-content scale-105 sm:scale-100 bg-black bg-small bg-home-pattern" />
     </main>
   )
 }

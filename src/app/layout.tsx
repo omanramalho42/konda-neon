@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={bebasNeue.className}>
-        <div className='fixed top-0 w-full'>
+        <div className='fixed z-20 top-0 w-full'>
           <Header />
         </div>
         {children}
