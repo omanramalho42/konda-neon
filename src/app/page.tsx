@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <main className='flex 2xl:flex-row flex-col-reverse mt-20 justify-center items-center text-center'>
       <div className='2xl:w-[50vw] w-full mt-[80px]'>
-        <div className='flex 2xl:mx-32 mx-10 flex-col space-y-10'>
+        <div className='flex 2xl:mx-32 mx-5 flex-col space-y-10'>
           <p 
             className='text-lg uppercase 2xl:text-start text-center 2xl:w-[450px] shadow-[#FFC607] text-[#FFC607] tracking-[6px]' 
             style={{ textShadow: '0px 0px 8px #FFC607' }}
@@ -30,7 +30,7 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <div className="2xl:w-[50vw] z-10 w-full h-[93vh] bg-no-repeat bg-cover 3xl:bg-right-top sm:bg-center bg-origin-content scale-105 sm:scale-100 bg-black bg-small bg-home-pattern" />
+      <div className="2xl:w-[50vw] z-10 w-full h-[93vh] bg-no-repeat bg-cover 3xl:bg-right-top sm:bg-center bg-origin-content sm:scale-110 md:scale-105 bg-black bg-small bg-home-pattern" />
     </main>
   )
 }
