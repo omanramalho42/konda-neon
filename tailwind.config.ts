@@ -15,7 +15,8 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
         'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'home-pattern': "url('../assets/img/bg.svg')",
+        'home-pattern': "url('../assets/img/background.jpeg')",
+        'home-pattern-mobile': "url('../assets/img/bg.jpeg')",
       },
       backgroundPosition: {
         'small': 'center right -2rem'
