@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className='flex 2xl:flex-row flex-col justify-center items-center text-center'>
+    <main className='flex 2xl:flex-row flex-col mt-20 justify-center items-center text-center'>
       <div className='2xl:w-[50vw] w-full mt-[80px]'>
         <div className='flex 2xl:mx-32 mx-10 flex-col space-y-10'>
           <p 
@@ -30,7 +30,7 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <div className="2xl:w-[50vw] w-full h-[93vh] bg-no-repeat bg-cover 3xl:bg-right-top sm:bg-center bg-origin-content scale-105 bg-black bg-small bg-home-pattern" />
+      <div className="2xl:w-[50vw] w-full h-[93vh] bg-no-repeat bg-cover 3xl:bg-right-top sm:bg-center bg-origin-content scale-105 sm:scale-100 bg-black bg-small bg-home-pattern" />
     </main>
   )
 }
