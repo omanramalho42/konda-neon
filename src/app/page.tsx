@@ -12,7 +12,7 @@ export default function Home() {
           <h1 className='text-5xl text-[50px] sm:text-[70px] xl:text-[90px] 2xl:text-start text-center uppercase 3xl:w-[900px] tracking-[6px]'>
             Dê Vida às Suas Ideias com Konda Neon!
           </h1>
-          <p className='text-gray-100 text-lg 2xl:text-start text-center uppercase 2xl:w-[660px] tracking-[6px]'>
+          <p className='text-gray-100 text-sm 2xl:text-start text-center uppercase 2xl:w-[660px] tracking-[6px]'>
             Konda Neon, onde transformamos sua visão em luz. 
             Utilizando tecnologia de impressão 3D, tornamos 
             o processo de criação de LEDs Neon personalizados
@@ -30,7 +30,7 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <div className="bg-white 2xl:w-[50vw] w-full h-[93vh] bg-no-repeat bg-cover 3xl:bg-right-top bg-small bg-home-pattern" />
+      <div className="2xl:w-[50vw] w-full h-[93vh] bg-no-repeat bg-cover 3xl:bg-right-top sm:bg-center bg-origin-content scale-105 bg-black bg-small bg-home-pattern" />
     </main>
   )
 }
