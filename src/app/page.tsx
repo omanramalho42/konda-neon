@@ -20,8 +20,8 @@ export default function Home() {
           </p>
         </div>
         <div className='flex justify-center my-[75px]'>
-          <button className='bg-[#FFC607] shadow-growlight rounded-[50px] w-[247px] p-[28px] text-center'>
-            <p className='text-black uppercase text-[16px] tracking-[6px]'>
+          <button className='flex justify-center bg-[#FFC607] shadow-growlight rounded-[50px] w-[247px] p-[28px]'>
+            <p className='text-black text-center uppercase text-[16px] tracking-[6px]'>
               contato
             </p>
           </button>
