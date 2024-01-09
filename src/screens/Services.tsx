@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import { 
   Package, 
   ClockAfternoon,
@@ -74,8 +75,10 @@ const Services:React.FC = () => {
             }, idx) => {
               return (
                 <Reveal key={idx} mult={idx}>
-                  <div
-                    className='flex flex-col my-10 bg-white items-center space-y-10 h-[400px] rounded-xl w-96'
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    className='flex flex-col my-10 bg-white items-center space-y-10 h-[400px] rounded-xl w-96 '
                   >
                     <div 
                       className='relative flex justify-center items-center right-32 bottom-10 w-16 h-16 rounded-md bg-gradient-conic'
@@ -96,7 +99,7 @@ const Services:React.FC = () => {
                         )) }
                       </ul>
                     </div>
-                  </div>
+                  </motion.div>
                 </Reveal>
               )
             })}
