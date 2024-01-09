@@ -5,7 +5,9 @@ import Services from '@/screens/Services'
 
 const letters = {
   title: 'Impressão 3D de Neon LED para Projetos Personalizados e Rápidos.',
-  subtitle: 'Dê Vida às Suas Ideias com Konda Neon!',
+  subtitle: `Dê Vida às suas ideias
+  com Konda Neon!
+  `,
   paragraph: `Konda Neon, onde transformamos sua visão em luz. 
   Utilizando tecnologia de impressão 3D, tornamos 
   o processo de criação de LEDs Neon personalizados
@@ -23,7 +25,7 @@ export default function Home() {
               variants={container}
               initial="hidden"
               animate="visible"
-              className='flex flex-wrap 2xl:w-[450px]'
+              className='flex flex-wrap 2xl:w-[480px]'
             >
               {Array.from(letters.title).map((letter, index) => (
                 <motion.p 
@@ -46,14 +48,14 @@ export default function Home() {
                 <motion.h1 
                   variants={child} 
                   key={index}
-                  className='text-5xl text-[50px] sm:text-[70px] xl:text-[90px] 2xl:text-start text-center uppercase 3xl:w-[900px] tracking-[6px]'
+                  className='text-5xl text-[50px] sm:text-[70px] xl:text-[85px] 2xl:text-start text-center uppercase tracking-[6px]'
                 >
                   {letter === " " ? "\u00A0" : letter}
                 </motion.h1>
               ))}
             </motion.div>
             <motion.div 
-              className='flex-wrap 2xl:w-[660px]'
+              className='flex-wrap'
               style={{ overflow: "hidden", display: "flex", fontSize: "2rem" }}
               variants={container}
               initial="hidden"
@@ -86,7 +88,12 @@ export default function Home() {
           </div>
         </div>
         <motion.div 
-          className="2xl:w-[50vw] z-10 w-full sm:h-[93vh] h-[65vh] bg-no-repeat bg-cover 3xl:bg-right-top bg-center bg-origin-content bg-black md:bg-home-pattern bg-home-pattern-mobile" 
+          className="2xl:w-[50vw] border-t-4 border-l-4 z-10 w-full sm:h-[93vh] h-[65vh] bg-no-repeat bg-cover 3xl:bg-right-top bg-center bg-origin-content bg-black md:bg-home-pattern bg-home-pattern-mobile" 
+          style={{
+            borderStyle: 'solid',
+            borderImage: 'linear-gradient(to right, #63ABFD, #F6F7A0, #FF5E82) 1'
+            // borderImage: 'linear-gradient(90deg, #63ABFD 3.49%, #F6F7A0 28.91%, #FF5E82 75.09%)'
+          }}
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
