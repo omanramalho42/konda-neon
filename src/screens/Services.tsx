@@ -68,7 +68,7 @@ const Services:React.FC = () => {
 
         <div className='flex justify-center xl:mt-16 mt-0'>
           <div 
-            className='grid xl:grid-cols-3 grid-cols-1 2xl:gap-14 gap-8 xl:mt-16 mt-0 rounded-xl' 
+            className='grid xl:grid-cols-3 grid-cols-1 2xl:gap-14 gap-0 xl:mt-16 mt-0 rounded-xl' 
           >
             {services.map(({ 
               title, 
@@ -77,28 +77,34 @@ const Services:React.FC = () => {
             }, idx) => {
               return (
                 <Reveal key={idx} mult={idx}>
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    className='flex flex-col xl:my-10 bg-white  items-center xl:space-y-10 space-y-0 h-[400px] rounded-xl xl:w-96 '
-                  >
+                  <>
                     <div 
-                      className='relative flex justify-center items-center 2xl:right-32 right-24 2xl:bottom-10 bottom-5 w-16 h-16 rounded-md bg-gradient-conic'
+                      className='relative flex justify-center items-center top-10 left-4 xl:left-8 w-16 h-16 rounded-md bg-gradient-conic'
                     >
                       { icon }
                     </div>
-                    <div className='flex flex-col justify-center items-center 2xl:space-y-10 space-y-2'>
-                      <h4 className='xl:text-3xl text-2xl text-black'>
-                        { title }
-                      </h4>
-                      <ul className='xl:px-10 px-5'>
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    className=' flex flex-col bg-white items-center justify-start rounded-xl 2xl:w-96 h-[500px] shadow-2xl'
+                  >
+                    <h4 className='text-3xl text-black mt-1'>
+                      { title }
+                    </h4>
+                    <div className='flex flex-col h-full justify-center 2xl:my-10 my-6 items-center 2xl:space-y-10 space-y-0'>
+                      <ul className='xl:px-5 lg:px-40 px-5'>
                         { text.map((paragraph, index) => (
-                          <li key={`${index+'-'+title}`}  style={{ listStyleType: 'square', listStylePosition: 'inside' }} className='text-black text-center font-lg'>
+                          <li 
+                            key={`${index+'-'+title}`}  
+                            style={{ listStyleType: 'square', listStylePosition: 'inside' }} 
+                            className='2xl:text-lg text-lg text-black text-center'
+                          >
                             { paragraph }
                           </li>
                         )) }
                       </ul>
                     </div>
                   </motion.div>
+                  </>
                 </Reveal>
               )
             })}

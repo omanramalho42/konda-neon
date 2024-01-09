@@ -7,7 +7,7 @@ const Hero:React.FC = () => {
         autoPlay
         muted
         loop
-        className="rotate-180 absolute sm:top-[0] top-[25%] h-[100vh] left-0 z-[0] object-cover"
+        className="rotate-180 absolute xl:top-0 top-[45%] h-full w-[100vw] left-0 z-[0] object-cover"
       >
         <source src="../assets/video/blackhole.webm" type="video/webm"/>
       </video>
