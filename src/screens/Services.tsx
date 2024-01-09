@@ -3,10 +3,11 @@ import { motion } from 'framer-motion'
 import { 
   Package, 
   ClockAfternoon,
-  CurrencyDollar 
+  CurrencyDollar
 } from '@phosphor-icons/react'
 
 import Reveal from '@/components/Reveal'
+import Code from '@/components/Code';
 
 interface ServicesProps {
   title: String;
@@ -45,24 +46,25 @@ const services:ServicesProps[] = [
 
 const Services:React.FC = () => {
   return (
-    <section className='flex xl:h-[100vh] flex-col justify-center my-10 mx-20 mt-14'>
-
-      <Reveal>
-        <div className='flex flex-col items-center space-y-9'>
-          <p className='text-lg uppercase 2xl:text-start text-center shadow-[#FFC607] text-[#FFC607] tracking-[6px]' style={{ textShadow: '0px 0px 8px #FFC607' }}>
-            Nosso serviço
-          </p>
-          <div>
-            <h2 className='text-[45px] mx-16 sm:text-[70px] xl:text-[80px] uppercase text-center tracking-[6px]'>
-              Processo de pedido
-            </h2>
-            <div className='w-full h-1 bg-gradient-linear rounded-xl' />
+    <>
+      <Code />
+      <section className='flex xl:h-[100vh] flex-col justify-center my-10 mx-20 mt-14'>
+        <Reveal>
+          <div className='flex flex-col items-center space-y-9'>
+            <p className='text-lg uppercase 2xl:text-start text-center shadow-[#FFC607] text-[#FFC607] tracking-[6px]' style={{ textShadow: '0px 0px 8px #FFC607' }}>
+              Nosso serviço
+            </p>
+            <div>
+              <h2 className='text-[45px] mx-16 sm:text-[70px] xl:text-[80px] uppercase text-center tracking-[6px]'>
+                Processo de pedido
+              </h2>
+              <div className='w-full h-1 bg-gradient-linear rounded-xl' />
+            </div>
+            <p className='text-[20px] text-center text-[#A8A6A7] tracking-[4px] xl:w-[630px]' style={{ textShadow: '0px 0px 6px #FFF', }}>
+              Na Konda Neon, simplificamos o processo de orçamento para tornar sua experiência única desde o início.
+            </p>
           </div>
-          <p className='text-[20px] text-center text-[#A8A6A7] tracking-[4px] xl:w-[630px]' style={{ textShadow: '0px 0px 6px #FFF', }}>
-            Na Konda Neon, simplificamos o processo de orçamento para tornar sua experiência única desde o início.
-          </p>
-        </div>
-      </Reveal>
+        </Reveal>
 
         <div className='flex justify-center mt-16'>
           <div 
@@ -77,7 +79,7 @@ const Services:React.FC = () => {
                 <Reveal key={idx} mult={idx}>
                   <motion.div
                     whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
+                    // whileTap={{ scale: 0.9 }}
                     className='flex flex-col my-10 bg-white items-center space-y-10 h-[400px] rounded-xl w-96 '
                   >
                     <div 
@@ -105,7 +107,8 @@ const Services:React.FC = () => {
             })}
           </div>
         </div>
-    </section>
+      </section>
+    </>
   )
 }
 

@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Bebas_Neue, Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
+import Hero from '@/components/Hero'
+import StarsCanvas from '@/components/StarBackground'
 
 const inter = Inter({ subsets: ['latin'] })
 const bebasNeue = Bebas_Neue({
@@ -22,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={bebasNeue.className}>
-        <div className='fixed z-20 top-0 w-full'>
+        <div className='fixed z-20 top-0 w-full'>  
           <Header />
         </div>
         {children}
