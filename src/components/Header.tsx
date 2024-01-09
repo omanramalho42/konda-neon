@@ -25,7 +25,7 @@ const item = {
 
 const Header:React.FC = () => {
   return (
-    <div className='bg-black opacity-70'>
+    <div className='bg-[rgba(0,0,0,0.5)]'>
       <div className='flex 2xl:mx-20 flex-row px-10 2xl:h-[75px] h-full items-center justify-between p-[10px]'>
         <motion.h5 
           initial={{ opacity: 0, scale: 0.5 }}

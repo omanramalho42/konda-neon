@@ -23,7 +23,7 @@ const Reveal:FC<RevealProps> = ({ children, width = 'fit-content', mult = 1 }: R
   },[isInView]);
 
   return (
-    <div ref={ref} className={`relative width-[${width}] overflow-hidden p-10`}>
+    <div ref={ref} className={`relative width-[${width}] p-10 overflow-hidden`}>
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },

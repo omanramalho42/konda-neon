@@ -48,7 +48,7 @@ const Services:React.FC = () => {
   return (
     <>
       <Code />
-      <section className='flex xl:h-[100vh] flex-col justify-center my-10 mx-20 mt-14'>
+      <section className='flex xl:h-[100vh] flex-col justify-center my-10 xl:mx-20 xl:mt-14'>
         <Reveal>
           <div className='flex flex-col items-center space-y-9'>
             <p className='text-lg uppercase 2xl:text-start text-center shadow-[#FFC607] text-[#FFC607] tracking-[6px]' style={{ textShadow: '0px 0px 8px #FFC607' }}>
@@ -66,9 +66,9 @@ const Services:React.FC = () => {
           </div>
         </Reveal>
 
-        <div className='flex justify-center mt-16'>
+        <div className='flex justify-center xl:mt-16 mt-0'>
           <div 
-            className='grid xl:grid-cols-3 grid-cols-1 gap-14 mt-16 rounded-xl' 
+            className='grid xl:grid-cols-3 grid-cols-1 2xl:gap-14 gap-8 xl:mt-16 mt-0 rounded-xl' 
           >
             {services.map(({ 
               title, 
@@ -79,24 +79,21 @@ const Services:React.FC = () => {
                 <Reveal key={idx} mult={idx}>
                   <motion.div
                     whileHover={{ scale: 1.1 }}
-                    // whileTap={{ scale: 0.9 }}
-                    className='flex flex-col my-10 bg-white items-center space-y-10 h-[400px] rounded-xl w-96 '
+                    className='flex flex-col xl:my-10 bg-white  items-center xl:space-y-10 space-y-0 h-[400px] rounded-xl xl:w-96 '
                   >
                     <div 
-                      className='relative flex justify-center items-center right-32 bottom-10 w-16 h-16 rounded-md bg-gradient-conic'
+                      className='relative flex justify-center items-center 2xl:right-32 right-24 2xl:bottom-10 bottom-5 w-16 h-16 rounded-md bg-gradient-conic'
                     >
                       { icon }
                     </div>
-                    <div className='flex flex-col justify-center items-center relative bottom-16 space-y-10'>
-                      <h4 className='text-3xl text-black'>
+                    <div className='flex flex-col justify-center items-center 2xl:space-y-10 space-y-2'>
+                      <h4 className='xl:text-3xl text-2xl text-black'>
                         { title }
                       </h4>
-                      <ul className='px-10'>
+                      <ul className='xl:px-10 px-5'>
                         { text.map((paragraph, index) => (
                           <li key={`${index+'-'+title}`}  style={{ listStyleType: 'square', listStylePosition: 'inside' }} className='text-black text-center font-lg'>
-                            {/* <p className='text-black text-center font-lg'> */}
-                              { paragraph }
-                            {/* </p> */}
+                            { paragraph }
                           </li>
                         )) }
                       </ul>
