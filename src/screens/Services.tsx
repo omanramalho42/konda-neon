@@ -44,7 +44,7 @@ const services:ServicesProps[] = [
 
 const Services:React.FC = () => {
   return (
-    <section className='flex xl:h-[100vh] flex-col justify-center my-10 mx-20 mt-20'>
+    <section className='flex xl:h-[100vh] flex-col justify-center my-10 mx-20 mt-14'>
 
       <Reveal>
         <div className='flex flex-col items-center space-y-9'>
@@ -63,7 +63,7 @@ const Services:React.FC = () => {
         </div>
       </Reveal>
 
-        <div className='flex justify-center mt-20'>
+        <div className='flex justify-center mt-16'>
           <div 
             className='grid xl:grid-cols-3 grid-cols-1 gap-14 mt-16 rounded-xl' 
           >
