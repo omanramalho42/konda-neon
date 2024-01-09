@@ -66,9 +66,9 @@ const Services:React.FC = () => {
           </div>
         </Reveal>
 
-        <div className='flex justify-center xl:mt-16 mt-0'>
+        <div className='flex justify-center xl:mt-2 mt-0'>
           <div 
-            className='grid xl:grid-cols-3 grid-cols-1 2xl:gap-14 gap-0 xl:mt-16 mt-0 rounded-xl' 
+            className='grid xl:grid-cols-3 grid-cols-1 2xl:gap-14 gap-5 mx-10 xl:mt-16 mt-0 rounded-xl' 
           >
             {services.map(({ 
               title, 
