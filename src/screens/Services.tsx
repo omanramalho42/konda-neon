@@ -47,7 +47,7 @@ const services:ServicesProps[] = [
 const Services:React.FC = () => {
   return (
     <>
-      <Code />
+      {/* <Code /> */}
       <section className='flex xl:h-[100vh] flex-col justify-center my-10 xl:mx-20 xl:mt-14'>
         <Reveal>
           <div className='flex flex-col items-center space-y-9'>

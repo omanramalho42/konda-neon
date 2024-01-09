@@ -19,7 +19,7 @@ const letters = {
 export default function Home() {
   return (
     <>
-      <Hero />
+      {/* <Hero /> */}
       <StarsCanvas />
       <main className='flex xl:flex-row flex-col-reverse mt-20 justify-center items-center text-center'>
         <section className='2xl:w-[50vw] w-full md:mt-[80px] mt-[35px]'>
