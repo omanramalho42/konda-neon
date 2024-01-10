@@ -1,15 +1,18 @@
 'use client'
+
 import { motion } from 'framer-motion'
+
 import { child, container } from "@/constants/variants"
+
 import Services from '@/screens/Services'
-import Hero from '@/components/Hero'
 import StarsCanvas from '@/components/StarBackground'
+import Hero from '@/components/Hero'
+import TextMotion from '@/components/TextMotion'
 
 const letters = {
   title: 'Impressão 3D de Neon LED para Projetos Personalizados e Rápidos.',
-  subtitle: `Dê Vida às suas ideias
-  com Konda Neon!
-  `,
+  subtitle: 'Dê Vida às suas ideias',
+  secondSubtitle: `com Konda Neon!`,
   paragraph: `Konda Neon, onde transformamos sua visão em luz. 
   Utilizando tecnologia de impressão 3D, tornamos 
   o processo de criação de LEDs Neon personalizados
@@ -23,13 +26,13 @@ export default function Home() {
       <StarsCanvas />
       <main className='flex xl:flex-row flex-col-reverse mt-20 justify-center items-center text-center'>
         <section className='2xl:w-[50vw] w-full md:mt-[80px] mt-[35px]'>
-          <div className='flex 2xl:mx-32 mx-5 flex-col md:space-y-10 space-y-6'>
+          <div className='flex 3xl:mx-32 2xl:mx-20 mx-5 flex-col md:space-y-10 space-y-6'>
             <motion.div
-              style={{ overflow: "hidden", display: "flex", fontSize: "2rem", textShadow: '0px 0px 8px #FFC607' }}
+              style={{ textShadow: '0px 0px 8px #FFC607' }}
               variants={container}
               initial="hidden"
               animate="visible"
-              className='flex flex-wrap 2xl:w-[480px] z-10'
+              className='flex text-[2rem] overflow-hidden xl:justify-start justify-center flex-wrap 2xl:w-[480px] z-10'
             >
               {Array.from(letters.title).map((letter, index) => (
                 <motion.p 
@@ -41,25 +44,77 @@ export default function Home() {
                 </motion.p>
               ))}
             </motion.div>
+
             <motion.div 
-              className='flex-wrap py-5 z-10'
-              style={{ overflow: "hidden", display: "flex", fontSize: "2rem" }}
-              variants={container}
-              initial="hidden"
-              animate="visible"
+              className='flex flex-col'
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
             >
-              {Array.from(letters.subtitle).map((letter, index) => (
-                <motion.h1 
-                  variants={child} 
-                  key={index}
-                  className='text-5xl text-[50px] sm:text-[70px] xl:text-[85px] 2xl:text-start text-center uppercase tracking-[6px]'
-                >
-                  {letter === " " ? "\u00A0" : letter}
-                </motion.h1>
-              ))}
+              <motion.div 
+                className='flex flex-row z-20 py-2 overflow-hidden'
+                variants={container}
+                initial="hidden"
+                animate="visible"
+              >
+                {Array.from(letters.subtitle).map((letter, index) => (
+                  <TextMotion key={index}>
+                    {letter === " " ? "\u00A0" : letter}
+                  </TextMotion>
+                ))}
+              </motion.div>
+              <motion.div 
+                className='flex flex-row z-20 py-2 overflow-hidden'
+                variants={container}
+                initial="hidden"
+                animate="visible"
+              >
+                {Array.from(letters.secondSubtitle).map((letter, index) => (
+                  <TextMotion key={index}>
+                    {letter === " " ? "\u00A0" : letter}
+                  </TextMotion>
+                ))}
+              </motion.div>
             </motion.div>
+
+            {/* <>
+              <motion.div 
+                className='flex flex-wrap pt-5 z-20 xl:justify-start justify-center overflow-hidden'
+                variants={container}
+                initial="hidden"
+                animate="visible"
+              >
+                {Array.from(letters.subtitle).map((letter, index) => (
+                  <motion.div 
+                    variants={child} 
+                    key={index}
+                    className='text-5xl 3xl:text-[85px] 2xl:text-[65px] xl:text-[60px] sm:text-[65px] text-[25px] uppercase tracking-[6px]'
+                  >
+                    {letter === " " ? "\u00A0" : letter}
+                  </motion.div>
+                ))}
+              </motion.div>
+              
+              <motion.div 
+                className='flex flex-wrap z-20 xl:justify-start justify-center overflow-hidden relative xl:bottom-10 bottom-5'
+                variants={container}
+                initial="hidden"
+                animate="visible"
+              >
+                {Array.from(letters.secondSubtitle).map((letter, index) => (
+                  <motion.div 
+                    variants={child} 
+                    key={index}
+                    className='text-5xl 3xl:text-[85px] 2xl:text-[65px] xl:text-[60px] sm:text-[65px] text-[25px] uppercase tracking-[6px]'
+                  >
+                    {letter === " " ? "\u00A0" : letter}
+                  </motion.div>
+                ))}
+              </motion.div>
+            </> */}
+
             <motion.div 
-              className='flex-wrap z-10'
+              className='flex-wrap z-10 flex xl:justify-start justify-center'
               style={{ overflow: "hidden", display: "flex", fontSize: "2rem" }}
               variants={container}
               initial="hidden"
@@ -76,9 +131,10 @@ export default function Home() {
               ))}
             </motion.div>
           </div>
+
           <div className='flex justify-center my-[75px]'>
             <motion.button 
-              className='flex justify-center z-10 bg-[#FFC607] shadow-growlight rounded-[50px] w-[247px] p-[28px]'
+              className='flex justify-center z-20 bg-[#FFC607] shadow-growlight rounded-[50px] w-[247px] p-[28px]'
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}

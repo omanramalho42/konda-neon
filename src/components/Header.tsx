@@ -2,6 +2,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Hero from './Hero';
+import TextMotion from './TextMotion';
 
 const container = {
   hidden: { opacity: 1, scale: 0 },
@@ -27,6 +28,7 @@ const Header:React.FC = () => {
   return (
     <div className='bg-[rgba(0,0,0,0.5)]'>
       <div className='flex 2xl:mx-20 flex-row px-10 2xl:h-[75px] h-full items-center justify-between p-[10px]'>
+        
         <motion.h5 
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -41,6 +43,7 @@ const Header:React.FC = () => {
         >
           KONDA
         </motion.h5>
+        
         <motion.nav 
           variants={container}
           initial="hidden"
