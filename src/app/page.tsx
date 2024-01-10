@@ -10,6 +10,7 @@ import { child, container } from "@/constants/variants"
 import Services from '@/screens/Services'
 import StarsCanvas from '@/components/StarBackground'
 import TextMotion from '@/components/TextMotion'
+import Works from '@/screens/Works'
 
 // import Hero from '@/components/Hero'
 
@@ -165,6 +166,7 @@ export default function Home() {
         />
       </main>
       <Services />
+      <Works />
     </>
   )
 }
