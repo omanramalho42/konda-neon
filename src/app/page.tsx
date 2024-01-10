@@ -4,10 +4,14 @@ import { motion } from 'framer-motion'
 
 import { child, container } from "@/constants/variants"
 
+// import '../styles/cursor.css';
+// import '../scripts/cursor';
+
 import Services from '@/screens/Services'
 import StarsCanvas from '@/components/StarBackground'
-import Hero from '@/components/Hero'
 import TextMotion from '@/components/TextMotion'
+
+// import Hero from '@/components/Hero'
 
 const letters = {
   title: 'Impressão 3D de Neon LED para Projetos Personalizados e Rápidos.',
@@ -25,7 +29,8 @@ export default function Home() {
       {/* <Hero /> */}
       <StarsCanvas />
       <main className='flex xl:flex-row flex-col-reverse mt-20 justify-center items-center text-center'>
-        <section className='2xl:w-[50vw] w-full md:mt-[80px] mt-[35px]'>
+        <section className='3xl:w-[50vw] w-full md:mt-[80px] mt-[35px]'>
+
           <div className='flex 3xl:mx-32 2xl:mx-20 mx-5 flex-col md:space-y-10 space-y-6'>
             <motion.div
               style={{ textShadow: '0px 0px 8px #FFC607' }}
@@ -52,7 +57,7 @@ export default function Home() {
               transition={{ duration: 0.5 }}
             >
               <motion.div 
-                className='flex flex-row z-20 py-2 overflow-hidden'
+                className='flex flex-row z-20 py-2 overflow-hidden xl:justify-start justify-center'
                 variants={container}
                 initial="hidden"
                 animate="visible"
@@ -64,7 +69,7 @@ export default function Home() {
                 ))}
               </motion.div>
               <motion.div 
-                className='flex flex-row z-20 py-2 overflow-hidden'
+                className='flex flex-row z-20 py-2 overflow-hidden xl:justify-start justify-center'
                 variants={container}
                 initial="hidden"
                 animate="visible"
@@ -148,7 +153,7 @@ export default function Home() {
           </div>
         </section>
         <motion.div 
-          className="2xl:w-[50vw] border-t-4 border-l-4 z-10 w-full sm:h-[93vh] h-[65vh] bg-no-repeat bg-cover 3xl:bg-right-top bg-center bg-origin-content bg-black md:bg-home-pattern bg-home-pattern-mobile" 
+          className="3xl:w-[50vw] border-t-4 border-l-4 z-10 w-full sm:h-[93vh] h-[65vh] bg-no-repeat bg-cover 3xl:bg-right-top bg-center bg-black md:bg-home-pattern bg-home-pattern-mobile" 
           style={{
             borderStyle: 'solid',
             borderImage: 'linear-gradient(to right, #63ABFD, #F6F7A0, #FF5E82) 1'

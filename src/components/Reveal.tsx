@@ -7,7 +7,7 @@ interface RevealProps {
   mult?: number;
 }
 
-const Reveal:FC<RevealProps> = ({ children, width = 'fit-content', mult = 1 }: RevealProps) => {
+const Reveal:FC<RevealProps> = ({ children, width = '100%', mult = 1 }: RevealProps) => {
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -23,7 +23,10 @@ const Reveal:FC<RevealProps> = ({ children, width = 'fit-content', mult = 1 }: R
   },[isInView]);
 
   return (
-    <div ref={ref} className={`relative width-[${width}] overflow-hidden`}>
+    <div 
+      ref={ref}
+      style={{width: `${width}`}}
+    >
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },

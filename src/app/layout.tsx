@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
 import { Bebas_Neue, Inter } from 'next/font/google'
 import './globals.css'
+
 import Header from '@/components/Header'
-import Hero from '@/components/Hero'
-import StarsCanvas from '@/components/StarBackground'
+import Head from 'next/head'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 const bebasNeue = Bebas_Neue({
@@ -23,6 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      {/* <Script type="text/javascript" src="https://unpkg.com/threejs-toys@0.0.8/build/threejs-toys.module.cdn.min.js" /> */}
       <body className={bebasNeue.className}>
         <div className='fixed z-20 top-0 w-full'>  
           <Header />
