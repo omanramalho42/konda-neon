@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { ChangeEvent, useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 
 import { ArrowLeft, ArrowRight } from '@phosphor-icons/react'
@@ -18,6 +18,9 @@ const cards = [
 ]
 
 const Works:React.FC = () => {
+  const [progress, setProgress] = useState<string>('');
+  const [scroll, setScroll] = useState<any>(null);
+
   const ref = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -47,11 +50,16 @@ const Works:React.FC = () => {
       console.log("teste");
   },[scrollYProgress])
 
+  useEffect(() => {
+    setScroll(x);
+  },[x]);
+
+  console.log(x,'xs')
+
   return (
     <section 
-      className='grid xl:grid-cols-2 grid-cols-1 mx-10 items-center justify-center h-[100vh] mb-[100vh] mt-20'
-    >
-      
+      className='grid xl:grid-cols-2 grid-cols-1 xl:mx-20 mx-5 items-center justify-center xl:h-[100vh] h-full xl:mb-5'
+    > 
       <Reveal>
         <div className='flex flex-col items-center justify-around'>
           <div className='flex flex-col justify-center h-full items-center'>
@@ -84,7 +92,7 @@ const Works:React.FC = () => {
       </Reveal>
 
       <div className='w-full'>
-        <div className='flex flex-row justify-between items-center mb-10 relative right-24'>
+        <div className='flex xl:flex-row flex-col xl:justify-between justify-center xl:items-baseline items-center space-y-4 xl:mb-10 my-10 xl:relative xl:right-24'>
           <div className="flex flex-row items-center">
             <ArrowLeft size={24} />
             <ArrowRight size={24} />
@@ -92,12 +100,16 @@ const Works:React.FC = () => {
           
           <input
             type='range'
-            className='border-[3px] estilo w-full h-1 mx-10'
+            className='border-[3px] estilo w-full z-10 h-1 xl:mx-10 xl:relative bottom-1'
             // @ts-ignore
-            value={scrollYProgress || 0}
+            value={progress}
+            onChange={(event:ChangeEvent<HTMLInputElement>) => {
+              console.log('evento', event.target.value);
+              setProgress(event.target.value)
+            }}
             min={0}
             max={cards.length}
-            step={0.1}
+            step={1}
           />
         </div>
         
@@ -110,12 +122,12 @@ const Works:React.FC = () => {
               return (
                 <motion.div
                   style={{ x }}
-                  className='flex z-20 flex-col w-full min-w-[350px] items-center' 
+                  className='flex z-10 flex-col w-full min-w-[350px] items-center' 
                   key={idx}
                 >
                   <div className='flex flex-1'>
                     <div className='flex bg-white p-2'>
-                      <Image alt={title} src={image} />
+                      <Image alt={title} src={image} className='object-cover' />
                     </div>
                   </div>
                   <p className='uppercase text-md text-white text-center'>

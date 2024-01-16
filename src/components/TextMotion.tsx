@@ -31,7 +31,7 @@ const TextMotion:FC<TextMotionProps> = ({ children }: TextMotionProps) => {
 
   return (
     <motion.span
-      className='text-5xl text-[50px] sm:text-[70px] cursor-pointer xl:text-[85px] 2xl:text-start text-center uppercase tracking-[6px]'
+      className='text-5xl text-[50px] sm:text-[70px] cursor-pointer xl:text-[75px] 2xl:text-start text-center uppercase tracking-[6px]'
       animate={controls}
       onMouseOver={() => {
         if(!isPlaying) {

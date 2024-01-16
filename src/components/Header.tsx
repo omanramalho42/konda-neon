@@ -26,13 +26,13 @@ const item = {
 
 const Header:React.FC = () => {
   return (
-    <div className='bg-[rgba(0,0,0,0.5)]'>
-      <div className='flex 2xl:mx-20 flex-row px-10 2xl:h-[75px] h-full items-center justify-between p-[10px]'>
+    <div className='bg-[rgba(0,0,0,.5)]'>
+      <div className='flex 2xl:ml-20 flex-row px-10 2xl:h-[75px] h-full items-center justify-between p-[10px]'>
         
         <motion.h5 
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
-          className='uppercase sm:text-[64px] text-[44px] tracking-[6px] text-bold'
+          className='uppercase w-full sm:text-[64px] text-[44px] tracking-[6px] text-bold'
           transition={{ duration: 0.5 }}
           style={{
             textShadow: '0px 0px 6px #FFF',
@@ -48,20 +48,47 @@ const Header:React.FC = () => {
           variants={container}
           initial="hidden"
           animate="visible"
-          className='flex items-center 2xl:space-x-10 space-x-5'
+          className='flex w-full h-full z-30 justify-between items-center 2xl:space-x-10 space-x-5'
         >
-          <motion.p variants={item} className='text-[#CFCFCF] uppercase 2xl:text-[20px] sm:text-sm md:visible md:inline hidden transition-all invisible tracking-[.5px]'>
-            Como solicitar seu orçamento
-          </motion.p>
-          <motion.p variants={item} className='text-[#CFCFCF] uppercase 2xl:text-[20px] sm:text-sm md:visible md:inline hidden transition-all invisible tracking-[.5px]'>
-            Projetos já feitos
-          </motion.p>
-          <motion.p variants={item} className='text-[#CFCFCF] uppercase 2xl:text-[20px] sm:text-sm md:visible md:inline hidden transition-all invisible tracking-[.5px]'>
-            Inspiração
-          </motion.p>
-          <motion.p variants={item} className='text-[#CFCFCF] uppercase 2xl:text-[20px] sm:text-sm sm:visible tracking-[.5px]'>
-            Contato
-          </motion.p>
+          <a href="#services" className='z-20 cursor-pointer'>
+            <motion.p 
+              variants={item} 
+              className='text-[#CFCFCF] uppercase 2xl:text-[20px] sm:text-sm md:visible md:inline hidden transition-all invisible tracking-[.5px]'
+            >
+                Como solicitar seu orçamento
+            </motion.p>
+          </a>
+          <a href="#works" className='z-20 cursor-pointer'>
+            <motion.p 
+              variants={item} 
+              className='text-[#CFCFCF] cursor-pointer z-30 uppercase 2xl:text-[20px] sm:text-sm md:visible md:inline hidden transition-all invisible tracking-[.5px]'
+            >
+              Projetos já feitos
+            </motion.p>
+          </a>
+          <a href="#services" className='z-20 cursor-pointer'>
+            <motion.p 
+              variants={item} 
+              className='text-[#CFCFCF] cursor-pointer uppercase 2xl:text-[20px] sm:text-sm md:visible md:inline hidden transition-all invisible tracking-[.5px]'
+            >
+              Serviços                                   
+            </motion.p>
+          </a>
+          <a href="#inspirations" className='z-20 cursor-pointer'>
+            <motion.p 
+              variants={item} 
+              className='text-[#CFCFCF] cursor-pointer uppercase 2xl:text-[20px] sm:text-sm md:visible md:inline hidden transition-all invisible tracking-[.5px]'
+            >
+              Inspiração                                          
+            </motion.p>
+          </a>
+          <a href="#contact" className='z-20 cursor-pointer'>
+            <motion.p 
+              variants={item} 
+              className='text-[#CFCFCF] cursor-pointer uppercase 2xl:text-[20px] sm:text-sm sm:visible tracking-[.5px]'>
+              Contato
+            </motion.p>
+          </a>
         </motion.nav>
       </div>
     </div>

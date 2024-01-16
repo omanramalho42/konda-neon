@@ -5,6 +5,7 @@ import './globals.css'
 import Header from '@/components/Header'
 import Head from 'next/head'
 import Script from 'next/script'
+import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 const bebasNeue = Bebas_Neue({
@@ -29,7 +30,10 @@ export default function RootLayout({
         <div className='fixed z-20 top-0 w-full'>  
           <Header />
         </div>
-        {children}
+        { children }
+        <div>
+          <Footer />
+        </div>
       </body>
     </html>
   )

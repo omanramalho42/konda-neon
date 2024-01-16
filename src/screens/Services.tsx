@@ -48,14 +48,14 @@ const Services:React.FC = () => {
   return (
     <>
       {/* <Code /> */}
-      <section className='flex xl:h-[100vh] flex-col justify-center my-10 xl:mx-20 xl:mt-14'>
+      <section className='xl:h-[100vh] flex flex-col justify-center xl:mx-20 xl:mt-0 xl:my-0 my-10'>
         <Reveal>
-          <div className='flex flex-col items-center space-y-9'>
+          <div className='flex flex-col items-center space-y-[30px]'>
             <p className='text-lg uppercase 2xl:text-start text-center shadow-[#FFC607] text-[#FFC607] tracking-[6px]' style={{ textShadow: '0px 0px 8px #FFC607' }}>
               Nosso serviço
             </p>
             <div>
-              <h2 className='text-[45px] mx-16 sm:text-[70px] xl:text-[80px] uppercase text-center tracking-[6px]'>
+              <h2 className='text-[45px] mx-16 sm:text-[70px] xl:text-[50px] uppercase text-center tracking-[6px]'>
                 Processo de pedido
               </h2>
               <div className='w-full h-1 bg-gradient-linear rounded-xl' />
@@ -68,7 +68,7 @@ const Services:React.FC = () => {
 
         <div className='flex justify-center xl:mt-2 mt-0'>
           <div 
-            className='grid xl:grid-cols-3 grid-cols-1 2xl:gap-14 gap-5 mx-10 xl:mt-16 mt-0 rounded-xl' 
+            className='grid xl:grid-cols-3 grid-cols-1 2xl:gap-14 gap-5 mx-10 mt-0 rounded-xl' 
           >
             {services.map(({ 
               title, 
@@ -85,9 +85,9 @@ const Services:React.FC = () => {
                     </div>
                   <motion.div
                     whileHover={{ scale: 1.1 }}
-                    className=' flex flex-col bg-white items-center justify-start rounded-xl 2xl:w-96 h-[500px] shadow-2xl'
+                    className=' flex flex-col bg-white items-center justify-start rounded-xl 2xl:w-96 h-[300px] shadow-2xl'
                   >
-                    <h4 className='text-3xl text-black mt-1'>
+                    <h4 className='text-3xl text-[24px] text-black mt-1'>
                       { title }
                     </h4>
                     <div className='flex flex-col h-full justify-center 2xl:my-10 my-6 items-center 2xl:space-y-10 space-y-0'>
@@ -95,8 +95,8 @@ const Services:React.FC = () => {
                         { text.map((paragraph, index) => (
                           <li 
                             key={`${index+'-'+title}`}  
-                            style={{ listStyleType: 'square', listStylePosition: 'inside' }} 
-                            className='2xl:text-lg text-lg text-black text-center'
+                            style={{ listStyleType: 'square', listStylePosition: 'inside', lineHeight: '110%' }} 
+                            className='2xl:text-[15px] text-lg text-black text-center'
                           >
                             { paragraph }
                           </li>
