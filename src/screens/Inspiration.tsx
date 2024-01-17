@@ -18,8 +18,8 @@ const Inspiration = () => {
 
   return (
     <div className='flex flex-col xl:h-[100vh] h-full xl:mx-20 mx-5 xl-mt-0'>
-        <Reveal>
-            <div className='flex w-full flex-row justify-between items-center'>
+        <div className='flex w-full flex-row justify-between items-center'>
+            <Reveal>
                 <div 
                     className='flex justify-start items-start w-[380px] border-b-2' 
                     style={{ 
@@ -40,8 +40,8 @@ const Inspiration = () => {
                         <ArrowRight size={32} color='#fff'/>
                     </div>
                 </div>
-            </div>
-        </Reveal>
+            </Reveal>
+        </div>
 
         <div className='grid xl:grid-cols-3 grid-cols-1 gap-10 w-full justify-center items-center xl:h-[100px] h-full my-[28px]'>
             { neonImages.map((item, index) => {

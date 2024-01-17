@@ -1,6 +1,8 @@
 'use client'
 import React from 'react'
+import { Link } from 'react-scroll'
 import { motion } from 'framer-motion'
+
 import Hero from './Hero';
 import TextMotion from './TextMotion';
 
@@ -25,6 +27,11 @@ const item = {
 };
 
 const Header:React.FC = () => {
+  
+  const handleSetActive = () => {
+
+  }
+  
   return (
     <div className='bg-[rgba(0,0,0,.5)]'>
       <div className='flex 2xl:ml-20 flex-row px-10 2xl:h-[75px] h-full items-center justify-between p-[10px]'>
@@ -50,6 +57,15 @@ const Header:React.FC = () => {
           animate="visible"
           className='flex w-full h-full z-30 justify-between items-center 2xl:space-x-10 space-x-5'
         >
+          <Link 
+      activeClass="active" 
+      to="services" 
+      spy={true} 
+      smooth={true} 
+      offset={50} 
+      duration={500} 
+      onSetActive={handleSetActive}
+    >
           <a href="#services" className='z-20 cursor-pointer'>
             <motion.p 
               variants={item} 
@@ -58,6 +74,16 @@ const Header:React.FC = () => {
                 Como solicitar seu orçamento
             </motion.p>
           </a>
+    </Link>
+    <Link 
+      activeClass="active" 
+      to="works" 
+      spy={true} 
+      smooth={true} 
+      offset={50} 
+      duration={500} 
+      onSetActive={handleSetActive}
+    >
           <a href="#works" className='z-20 cursor-pointer'>
             <motion.p 
               variants={item} 
@@ -66,6 +92,16 @@ const Header:React.FC = () => {
               Projetos já feitos
             </motion.p>
           </a>
+    </Link>
+    <Link 
+      activeClass="active" 
+      to="services" 
+      spy={true} 
+      smooth={true} 
+      offset={50} 
+      duration={500} 
+      onSetActive={handleSetActive}
+    >
           <a href="#services" className='z-20 cursor-pointer'>
             <motion.p 
               variants={item} 
@@ -74,6 +110,16 @@ const Header:React.FC = () => {
               Serviços                                   
             </motion.p>
           </a>
+    </Link>
+    <Link 
+      activeClass="active" 
+      to="inspirations" 
+      spy={true} 
+      smooth={true} 
+      offset={50} 
+      duration={500} 
+      onSetActive={handleSetActive}
+    >
           <a href="#inspirations" className='z-20 cursor-pointer'>
             <motion.p 
               variants={item} 
@@ -82,6 +128,16 @@ const Header:React.FC = () => {
               Inspiração                                          
             </motion.p>
           </a>
+    </Link>
+    <Link 
+      activeClass="active" 
+      to="contact" 
+      spy={true} 
+      smooth={true} 
+      offset={50} 
+      duration={500} 
+      onSetActive={handleSetActive}
+    >
           <a href="#contact" className='z-20 cursor-pointer'>
             <motion.p 
               variants={item} 
@@ -89,6 +145,7 @@ const Header:React.FC = () => {
               Contato
             </motion.p>
           </a>
+    </Link>
         </motion.nav>
       </div>
     </div>

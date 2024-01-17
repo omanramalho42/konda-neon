@@ -26,12 +26,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       {/* <Script type="text/javascript" src="https://unpkg.com/threejs-toys@0.0.8/build/threejs-toys.module.cdn.min.js" /> */}
-      <body className={bebasNeue.className}>
+      <body 
+        className={bebasNeue.className} 
+        style={{
+          scrollBehavior: 'smooth'
+        }}
+      >
         <div className='fixed z-20 top-0 w-full'>  
           <Header />
         </div>
         { children }
-        <div>
+        <div className=''>
           <Footer />
         </div>
       </body>

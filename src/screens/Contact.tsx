@@ -8,7 +8,7 @@ import Button from '@/components/Button'
 
 const Contact:React.FC = () => {
   return (
-    <div className='xl:grid 2xl:grid-cols-2 flex-col-reverse flex xl:h-[100vh] justify-center items-center xl:mx-20 mx-5 py-10'>
+    <div className='xl:grid 2xl:grid-cols-2 flex-col-reverse flex h-full justify-center items-center xl:mx-20 mx-5 py-10'>
         <Reveal>
             <div className='flex flex-col space-y-[20px] mb-10'>
                 <div className='flex flex-col space-y-[28px] xl:justify-start xl:w-[750px] justify-center xl:items-start'>
@@ -29,7 +29,7 @@ const Contact:React.FC = () => {
             </div>
         </Reveal>
         <Reveal>
-            <div className="flex w-full p-4">
+            <div className="flex w-full">
                 <Image 
                     src={VectorImage} 
                     alt='impresssora 3d' 

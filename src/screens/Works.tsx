@@ -10,6 +10,7 @@ import CardImage3 from '../assets/img/work3.png'
 import '../styles/works.css';
 import Reveal from '@/components/Reveal'
 import { motion, useAnimation, useInView, useScroll, useTransform } from 'framer-motion'
+import { container } from '@/constants/variants'
 
 const cards = [
   { title: 'EXTERIOR', image: CardImage },
@@ -93,24 +94,31 @@ const Works:React.FC = () => {
 
       <div className='w-full'>
         <div className='flex xl:flex-row flex-col xl:justify-between justify-center xl:items-baseline items-center space-y-4 xl:mb-10 my-10 xl:relative xl:right-24'>
-          <div className="flex flex-row items-center">
+          <motion.div  
+            className="flex flex-row items-center"
+            variants={container}
+            initial="hidden"
+            animate="visible"
+          >
             <ArrowLeft size={24} />
             <ArrowRight size={24} />
-          </div>
+          </motion.div>
           
-          <input
-            type='range'
-            className='border-[3px] estilo w-full z-10 h-1 xl:mx-10 xl:relative bottom-1'
-            // @ts-ignore
-            value={progress}
-            onChange={(event:ChangeEvent<HTMLInputElement>) => {
-              console.log('evento', event.target.value);
-              setProgress(event.target.value)
-            }}
-            min={0}
-            max={cards.length}
-            step={1}
-          />
+          <Reveal>
+            <input
+              type='range'
+              className='border-[3px] estilo w-full z-10 h-1 xl:mx-10 xl:relative bottom-1'
+              // @ts-ignore
+              value={progress}
+              onChange={(event:ChangeEvent<HTMLInputElement>) => {
+                console.log('evento', event.target.value);
+                setProgress(event.target.value)
+              }}
+              min={0}
+              max={cards.length}
+              step={1}
+            />
+          </Reveal>
         </div>
         
         <Reveal>
