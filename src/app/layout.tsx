@@ -3,9 +3,16 @@ import { Bebas_Neue, Inter } from 'next/font/google'
 import './globals.css'
 
 import Header from '@/components/Header'
-import Head from 'next/head'
-import Script from 'next/script'
 import Footer from '@/components/Footer'
+
+import { register } from 'swiper/element/bundle'
+
+register();
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
 
 const inter = Inter({ subsets: ['latin'] })
 const bebasNeue = Bebas_Neue({
@@ -25,7 +32,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* <Script type="text/javascript" src="https://unpkg.com/threejs-toys@0.0.8/build/threejs-toys.module.cdn.min.js" /> */}
       <body 
         className={bebasNeue.className} 
         style={{

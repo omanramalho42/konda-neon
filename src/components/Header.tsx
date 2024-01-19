@@ -31,6 +31,15 @@ const Header:React.FC = () => {
   const handleSetActive = () => {
 
   }
+
+  const gradient = {
+    // background: 'linear-gradient(86deg, #63ABFD 3.49%, #F6F7A0 28.91%, #FF5E82 75.09%)',
+    backgroundClip: 'text',
+    WebkitBackgroundClip: 'text',
+    color: 'transparent',
+    WebkitTextFillColor: 'transparent'
+  };
+
   
   return (
     <div className='bg-[rgba(0,0,0,.5)]'>
@@ -43,9 +52,7 @@ const Header:React.FC = () => {
           transition={{ duration: 0.5 }}
           style={{
             textShadow: '0px 0px 6px #FFF',
-            // backgroundImage: 'linear-gradient(90deg, #63ABFD 3.49%, #F6F7A0 28.91%, #FF5E82 75.09%)',
-            // backgroundClip: 'text',
-            // color: 'transparent'
+            ...gradient
           }}
         >
           KONDA
@@ -55,97 +62,76 @@ const Header:React.FC = () => {
           variants={container}
           initial="hidden"
           animate="visible"
-          className='flex w-full h-full z-30 justify-between items-center 2xl:space-x-10 space-x-5'
+          className='flex w-full h-full z-30 justify-end items-center 2xl:space-x-8 space-x-5'
         >
           <Link 
-      activeClass="active" 
-      to="services" 
-      spy={true} 
-      smooth={true} 
-      offset={50} 
-      duration={500} 
-      onSetActive={handleSetActive}
-    >
-          <a href="#services" className='z-20 cursor-pointer'>
-            <motion.p 
-              variants={item} 
-              className='text-[#CFCFCF] uppercase 2xl:text-[20px] sm:text-sm md:visible md:inline hidden transition-all invisible tracking-[.5px]'
-            >
-                Como solicitar seu orçamento
-            </motion.p>
-          </a>
-    </Link>
-    <Link 
-      activeClass="active" 
-      to="works" 
-      spy={true} 
-      smooth={true} 
-      offset={50} 
-      duration={500} 
-      onSetActive={handleSetActive}
-    >
-          <a href="#works" className='z-20 cursor-pointer'>
-            <motion.p 
-              variants={item} 
-              className='text-[#CFCFCF] cursor-pointer z-30 uppercase 2xl:text-[20px] sm:text-sm md:visible md:inline hidden transition-all invisible tracking-[.5px]'
-            >
-              Projetos já feitos
-            </motion.p>
-          </a>
-    </Link>
-    <Link 
-      activeClass="active" 
-      to="services" 
-      spy={true} 
-      smooth={true} 
-      offset={50} 
-      duration={500} 
-      onSetActive={handleSetActive}
-    >
-          <a href="#services" className='z-20 cursor-pointer'>
-            <motion.p 
-              variants={item} 
-              className='text-[#CFCFCF] cursor-pointer uppercase 2xl:text-[20px] sm:text-sm md:visible md:inline hidden transition-all invisible tracking-[.5px]'
-            >
-              Serviços                                   
-            </motion.p>
-          </a>
-    </Link>
-    <Link 
-      activeClass="active" 
-      to="inspirations" 
-      spy={true} 
-      smooth={true} 
-      offset={50} 
-      duration={500} 
-      onSetActive={handleSetActive}
-    >
-          <a href="#inspirations" className='z-20 cursor-pointer'>
-            <motion.p 
-              variants={item} 
-              className='text-[#CFCFCF] cursor-pointer uppercase 2xl:text-[20px] sm:text-sm md:visible md:inline hidden transition-all invisible tracking-[.5px]'
-            >
-              Inspiração                                          
-            </motion.p>
-          </a>
-    </Link>
-    <Link 
-      activeClass="active" 
-      to="contact" 
-      spy={true} 
-      smooth={true} 
-      offset={50} 
-      duration={500} 
-      onSetActive={handleSetActive}
-    >
-          <a href="#contact" className='z-20 cursor-pointer'>
+            activeClass="active" 
+            to="services" 
+            spy={true} 
+            smooth={true} 
+            offset={50} 
+            duration={500} 
+            onSetActive={handleSetActive}
+            className='z-20 cursor-pointer'
+          >
+              <motion.p 
+                variants={item} 
+                className='text-[#CFCFCF] uppercase 2xl:text-[20px] sm:text-sm md:visible md:inline hidden transition-all invisible tracking-[.5px]'
+              >
+                  Como solicitar seu orçamento
+              </motion.p>
+          </Link>
+          <Link 
+            href='#works'
+            activeClass="active" 
+            to="works" 
+            className='z-20 cursor-pointer'
+            spy={true} 
+            smooth={true} 
+            offset={50} 
+            duration={500} 
+            onSetActive={handleSetActive}
+          >
+              <motion.p 
+                variants={item} 
+                className='text-[#CFCFCF] cursor-pointer z-30 uppercase 2xl:text-[20px] sm:text-sm md:visible md:inline hidden transition-all invisible tracking-[.5px]'
+              >
+                Projetos já feitos
+              </motion.p>
+          </Link>
+          <Link 
+            activeClass="active" 
+            className='z-20 cursor-pointer'
+            to="inspirations" 
+            spy={true} 
+            smooth={true} 
+            offset={50} 
+            duration={500} 
+            onSetActive={handleSetActive}
+          >
+              <motion.p 
+                variants={item} 
+                className='text-[#CFCFCF] cursor-pointer uppercase 2xl:text-[20px] sm:text-sm md:visible md:inline hidden transition-all invisible tracking-[.5px]'
+              >
+                Inspiração                                          
+              </motion.p>
+          </Link>
+          <Link 
+            className='z-20 cursor-pointer'
+            activeClass="active" 
+            to="contact" 
+            spy={true} 
+            smooth={true} 
+            offset={50} 
+            duration={500} 
+            onSetActive={handleSetActive}
+          >
             <motion.p 
               variants={item} 
               className='text-[#CFCFCF] cursor-pointer uppercase 2xl:text-[20px] sm:text-sm sm:visible tracking-[.5px]'>
               Contato
             </motion.p>
-          </a>
-    </Link>
+          </Link>
         </motion.nav>
       </div>
     </div>

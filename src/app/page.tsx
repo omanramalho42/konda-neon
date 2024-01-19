@@ -18,13 +18,10 @@ import Button from '@/components/Button'
 // import Hero from '@/components/Hero'
 
 const letters = {
-  title: 'Impressão 3D de Neon LED para Projetos Personalizados e Rápidos.',
+  title: `Impressão 3D de Neon LED para Projetos Personalizados e Rápidos.`,
   subtitle: 'Dê Vida às suas ideias',
   secondSubtitle: `com Konda Neon!`,
-  paragraph: `Konda Neon, onde transformamos sua visão em luz.
-Utilizando tecnologia de impressão 3D, tornamos
-o processo de criação de LEDs Neon personalizados
-mais rápido, acessível e exclusivo para cada cliente.`
+  paragraph: `Konda Neon, onde transformamos sua visão em luz. Utilizando tecnologia de impressão 3D, tornamos o processo de criação de LEDs Neon personalizados mais rápido, acessível e exclusivo para cada cliente.`
 }
 
 export default function Home() {
@@ -32,10 +29,10 @@ export default function Home() {
     <>
       {/* <Hero /> */}
       <StarsCanvas />
-      <main className='flex xl:h-[100vh-75px] xl:flex-row  flex-col-reverse mt-[4.5rem] font-normal xl:ml-[80px] justify-center items-center text-center'>
+      <main className='flex xl:h-[100vh-75px] xl:flex-row  flex-col-reverse mt-[5.2rem] font-normal xl:ml-[80px] justify-center items-center text-center'>
         <section className='3xl:w-[50vw] w-full md:mt-[80px] mt-[35px]'>
 
-          <div className='flex 3xl:mx-32 2xl:mx-20 mx-5 flex-col md:space-y-8 space-y-6'>
+          <div className='flex 3xl:mx-32 2xl:mx-20 mx-5 flex-col md:space-y-[37px] mb-[87px] space-y-6 xl:items-start items-center justify-start'>
             <motion.div
               style={{ textShadow: '0px 0px 8px #FFC607' }}
               variants={container}
@@ -47,7 +44,7 @@ export default function Home() {
                 <motion.p 
                   variants={child} 
                   key={index}
-                  className='text-lg text-[16px] uppercase 2xl:text-start text-center shadow-[#FFC607] text-[#FFC607] tracking-[6px]'
+                  className='text-lg indent-[1px] text-[16px] uppercase 2xl:text-start text-center shadow-[#FFC607] text-[#FFC607] xl:tracking-[6px] tracking-[4px]'
                   style={{ 
                     letterSpacing: '98%',
                     textShadow: '#0px 0px 8px #FFC607' 
@@ -127,7 +124,7 @@ export default function Home() {
             </> */}
 
             <motion.div 
-              className='flex-wrap z-10 xl:w-[570px] flex xl:justify-start justify-center'
+              className='flex-wrap z-10 mr-4 flex xl:justify-start justify-center'
               style={{ overflow: "hidden", display: "flex", fontSize: "2rem", textShadow: `0px 0px 4px #A5A5A5` }}
               variants={container}
               initial="hidden"
@@ -137,7 +134,7 @@ export default function Home() {
                 <motion.p 
                   variants={child} 
                   key={index}
-                  className='text-gray-100 mb-4 text-sm text-[18px] 2xl:text-start text-center uppercase tracking-[3.25px]'
+                  className='text-gray-100 indent-[1px] mb-4 text-sm text-[23px] 2xl:text-start text-center uppercase tracking-[3.25px]'
                 >
                   {letter === " " ? "\u00A0" : letter}
                 </motion.p>
@@ -150,7 +147,7 @@ export default function Home() {
           </div>
         </section>
         <motion.div 
-          className="3xl:w-[50vw] border-t-4 border-l-4 z-10 w-full sm:h-[90vh] h-[65vh] bg-no-repeat bg-cover 3xl:bg-right-top bg-center bg-black md:bg-home-pattern bg-home-pattern-mobile" 
+          className="3xl:w-[50vw] border-t-2 border-l-2 z-10 w-full sm:h-[90vh] h-[65vh] bg-no-repeat bg-cover 3xl:bg-right-top bg-center bg-black md:bg-home-pattern bg-home-pattern-mobile" 
           style={{
             borderStyle: 'solid',
             borderImage: 'linear-gradient(to right, #63ABFD, #F6F7A0, #FF5E82) 1'

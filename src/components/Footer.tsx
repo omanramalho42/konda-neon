@@ -9,7 +9,7 @@ const footerInfo = [
 const Footer = () => {
   return (
     <footer 
-        className='border-t-2 xl:mx-20 mx-5 h-[200px]'
+        className='border-t-2 xl:mx-20 mx-5 h-[200px] mt-[5rem]'
         style={{ 
             borderStyle: 'solid',
             borderImage: 'linear-gradient(to right, #63ABFD, #F6F7A0, #FF5E82) 1'

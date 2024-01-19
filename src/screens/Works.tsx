@@ -1,4 +1,10 @@
-import React, { ChangeEvent, useEffect, useRef, useState } from 'react'
+'use client'
+import React, { 
+  ChangeEvent, 
+  useEffect, 
+  useRef, 
+  useState 
+} from 'react'
 import Image from 'next/image'
 
 import { ArrowLeft, ArrowRight } from '@phosphor-icons/react'
@@ -9,8 +15,18 @@ import CardImage3 from '../assets/img/work3.png'
 
 import '../styles/works.css';
 import Reveal from '@/components/Reveal'
-import { motion, useAnimation, useInView, useScroll, useTransform } from 'framer-motion'
+
+import { 
+  motion, 
+  useAnimation, 
+  useInView, 
+  useScroll, 
+  useTransform 
+} from 'framer-motion'
+
 import { container } from '@/constants/variants'
+
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 const cards = [
   { title: 'EXTERIOR', image: CardImage },
@@ -20,8 +36,7 @@ const cards = [
 
 const Works:React.FC = () => {
   const [progress, setProgress] = useState<string>('');
-  const [scroll, setScroll] = useState<any>(null);
-
+  const [slidePerView, setSlidePerView] = useState(2);
   const ref = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -46,42 +61,56 @@ const Works:React.FC = () => {
   },[isInView]);
   
   useEffect(() => {
-      console.log(scrollYProgress,'x');
+    console.log("aplicando efeito")
+    function handleResize(){
+      if(window.innerWidth < 650) {
+        setSlidePerView(1)
+      } else {
+        setSlidePerView(2)
+      }
+    }
 
-      console.log("teste");
-  },[scrollYProgress])
+    handleResize()
 
-  useEffect(() => {
-    setScroll(x);
-  },[x]);
+    window.addEventListener("resize", handleResize);
 
-  console.log(x,'xs')
+    return () => {
+      window.addEventListener("resize", handleResize);
+    }
+  },[]);
 
   return (
     <section 
-      className='grid xl:grid-cols-2 grid-cols-1 xl:mx-20 mx-5 items-center justify-center xl:h-[100vh] h-full xl:mb-5'
+      className='grid xl:grid-cols-2 grid-cols-1 xl:mx-20 mx-5 items-start justify-stretch xl:h-[100vh] h-full xl:mb-5'
     > 
       <Reveal>
-        <div className='flex flex-col items-center justify-around'>
-          <div className='flex flex-col justify-center h-full items-center'>
-            <h3 className='2xl:text-start text-center text-[4rem] color-white tracking-[6px]'>
+        <div className='flex flex-col xl:items-start items-center mx-20 justify-between xl:my-40'>
+          <div className='flex flex-col xl:space-y-0 space-y-6 justify-center h-full items-center'>
+            <h3 
+              className='2xl:text-start text-center xl:text-[4rem] text-[3rem] color-white tracking-[6px]'
+              style={{ textShadow: '0px 0px 4px #FFF', lineHeight: '110%' }}
+            >
               Projetos já feitos!
             </h3>
-            <p className='2xl:text-start text-center text-md text-[1rem] color-[#A5A5A5] tracking-[2px]'>
+            <p className='2xl:text-start text-center text-md xl:text-[1.5rem] text-[1rem] color-[#A5A5A5] tracking-[2px]'>
               Comece Seu Projeto Personalizado Agora!
             </p>
           </div>
           <div 
-            className='flex h-full xl:mt-44 mt-10 w-[290px] border-b-[3px]' 
-            style={{ 
-              borderStyle: 'solid',
-              borderImage: 'linear-gradient(to right, #63ABFD, #F6F7A0, #FF5E82) 1'
-            }}
+            className='flex flex-col-reverse h-full xl:mt-44 w-full justify-center xl:items-start items-center' 
           >
-            <div className='flex items-center space-x-6 mb-1'>
-              <ArrowRight size={42} color={'#63ABFD'} />
+            <div 
+              className='flex w-[290px] border-b-[3px]' 
+              style={{ 
+                borderStyle: 'solid',
+                borderRadius: '100%',
+                borderImage: 'linear-gradient(to right, #63ABFD, #F6F7A0, #FF5E82) 1'
+              }}
+            />
+            <div className='flex w-full items-center xl:justify-start justify-center space-x-2 xl:mt-[40px] mt-10'>
+              <ArrowRight size={32} color={'#63ABFD'} />
               <p 
-                className='text-[20px] text-[#FF5E82] uppercase' 
+                className='xl:text-[20px] text-[12px] text-[#FF5E82] uppercase xl:tracking-[3px] tracking-[2px]' 
                 style={{ textShadow: '0px 0px 4px #FB8486' }}
               >
                 Inicie seu Orçamento Agora!
@@ -93,21 +122,35 @@ const Works:React.FC = () => {
       </Reveal>
 
       <div className='w-full'>
-        <div className='flex xl:flex-row flex-col xl:justify-between justify-center xl:items-baseline items-center space-y-4 xl:mb-10 my-10 xl:relative xl:right-24'>
+        <div className='flex xl:flex-row flex-col xl:justify-between justify-center items-center xl:space-y-0 space-y-4 xl:mb-10 my-10'>
           <motion.div  
-            className="flex flex-row items-center"
+            className="flex flex-row items-center xl:relative right-12"
             variants={container}
             initial="hidden"
             animate="visible"
           >
-            <ArrowLeft size={24} />
-            <ArrowRight size={24} />
+            <ArrowLeft 
+              size={24} 
+              color='#fff' 
+              className='cursor-pointer z-10'
+              onClick={() => {
+                console.log("clicando evento")
+              }}
+            />
+            <ArrowRight 
+              size={24} 
+              color='#fff' 
+              className='cursor-pointer z-10' 
+              onClick={() => {
+                console.log("clicando evento")
+              }}
+            />
           </motion.div>
           
           <Reveal>
             <input
               type='range'
-              className='border-[3px] estilo w-full z-10 h-1 xl:mx-10 xl:relative bottom-1'
+              className='w-full border-[3px] estilo h-1 z-10 cursor-pointer'
               // @ts-ignore
               value={progress}
               onChange={(event:ChangeEvent<HTMLInputElement>) => {
@@ -126,24 +169,38 @@ const Works:React.FC = () => {
             ref={ref}
             className='flex overflow-x-hidden overflow-y-hidden scroll z-30 flex-row w-full grid-cols-2 gap-[30px]'
           >
-            {cards.map(({ image, title }, idx) => {
-              return (
-                <motion.div
-                  style={{ x }}
-                  className='flex z-10 flex-col w-full min-w-[350px] items-center' 
-                  key={idx}
-                >
-                  <div className='flex flex-1'>
-                    <div className='flex bg-white p-2'>
-                      <Image alt={title} src={image} className='object-cover' />
-                    </div>
-                  </div>
-                  <p className='uppercase text-md text-white text-center'>
-                    { title }
-                  </p>
-                </motion.div>
-              )
-            })}
+            <Swiper
+              slidesPerView={slidePerView}
+              pagination={{ clickable: true }}
+              allowSlideNext
+              allowSlidePrev
+              navigation
+            >
+              {cards.map(({ image, title }, idx) => {
+                return (
+                  <SwiperSlide key={idx}>
+                    <motion.div
+                      style={{ x }}
+                      className='flex z-10 flex-col items-center' 
+                      // key={idx}
+                    >
+                        <div className='flex flex-1'>
+                          <div className='flex bg-white p-2'>
+                            <Image 
+                              alt={title} 
+                              src={image} 
+                              className='object-cover h-[450px] w-full xl:w-[250px]' 
+                            />
+                          </div>
+                        </div>
+                        <p className='uppercase text-md text-[24px] text-white text-center'>
+                          { title }
+                        </p>
+                    </motion.div>
+                  </SwiperSlide>
+                )
+              })}
+            </Swiper>
           </div>
         </Reveal>
 
