@@ -27,7 +27,7 @@ const Inspiration = () => {
                         borderImage: 'linear-gradient(to right, #63ABFD, #F6F7A0, #FF5E82) 1'
                     }}
                 >
-                    <p className='uppercase sm:text-[64px] text-[44px] tracking-[6px] text-bold'>
+                    <p className='uppercase text-white sm:text-[64px] text-[44px] tracking-[6px] text-bold'>
                         Inspiraçao
                     </p>
                 </div>

@@ -29,7 +29,7 @@ export default function Home() {
     <>
       {/* <Hero /> */}
       <StarsCanvas />
-      <main className='flex xl:h-[100vh-75px] xl:flex-row  flex-col-reverse mt-[5.2rem] font-normal xl:ml-[80px] justify-center items-center text-center'>
+      <main className=' flex xl:h-[100vh-75px] xl:mt-[75px] xl:flex-row flex-col-reverse font-normal xl:ml-[80px] justify-center items-center text-center'>
         <section className='3xl:w-[50vw] w-full md:mt-[80px] mt-[35px]'>
 
           <div className='flex 3xl:mx-32 2xl:mx-20 mx-5 flex-col md:space-y-[37px] mb-[87px] space-y-6 xl:items-start items-center justify-start'>
@@ -158,16 +158,16 @@ export default function Home() {
           transition={{ duration: 0.5 }}
         />
       </main>
-      <div id='services'>
+      <div id='services' className=''>
         <Services />
       </div>
-      <div id='works'>
+      <div id='works' className=''>
         <Works />
       </div>
-      <div id='inspirations'>
+      <div id='inspirations' className=''>
         <Inspiration />
       </div>
-      <div id='contact'>
+      <div id='contact' className=''>
         <Contact />
       </div>
     </>

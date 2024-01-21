@@ -8,12 +8,12 @@ import Button from '@/components/Button'
 
 const Contact:React.FC = () => {
   return (
-    <div className='xl:grid 2xl:grid-cols-2 flex-col-reverse flex h-full justify-center items-center xl:mx-20 mx-5 py-10'>
+    <div className='xl:grid xl:grid-cols-2 flex-col-reverse flex xl:h-[100vh] h-full justify-center items-center xl:mx-20 mx-5 py-10'>
         <Reveal>
             <div className='flex flex-col space-y-[20px]'>
                 <div className='flex flex-col space-y-[28px] mb-[5rem] xl:justify-start xl:w-[750px] justify-center xl:items-start'>
                     <p 
-                        className='text-[40px] xl:text-start text-center tracking-[6px]' 
+                        className='text-[40px] text-white xl:text-start text-center tracking-[6px]' 
                         style={{ lineHeight: '110%' }}
                     >
                         Transforme sua Ideia em Realidade

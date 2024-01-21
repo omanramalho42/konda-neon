@@ -87,7 +87,7 @@ const Works:React.FC = () => {
         <div className='flex flex-col xl:items-start items-center mx-20 justify-between xl:my-40'>
           <div className='flex flex-col xl:space-y-0 space-y-6 justify-center h-full items-center'>
             <h3 
-              className='2xl:text-start text-center xl:text-[4rem] text-[3rem] color-white tracking-[6px]'
+              className='xl:text-start text-white text-center xl:text-[4rem] text-[3rem] color-white tracking-[6px]'
               style={{ textShadow: '0px 0px 4px #FFF', lineHeight: '110%' }}
             >
               Projetos já feitos!

@@ -61,14 +61,14 @@ const Services:React.FC = () => {
             </p>
             <div>
               <h2 
-                className='text-[45px] mx-16 sm:text-[70px] xl:text-[50px] uppercase text-center xl:tracking-[6px] tracking-[4px]'
+                className='text-[45px] text-white mx-16 sm:text-[70px] xl:text-[50px] uppercase text-center xl:tracking-[6px] tracking-[4px]'
                 style={{ lineHeight: '110%' }}
               > 
                 Processo de pedido
               </h2>
               <div className='w-full h-[2px] bg-gradient-linear rounded-xl xl:mt-0 mt-4' />
             </div>
-            <p className='text-[20px] text-center text-[#A8A6A7] tracking-[4px] xl:w-[630px]' style={{ textShadow: '0px 0px 6px #8D8D8D', }}>
+            <p className='text-[20px] text-center text-[#A8A6A7] tracking-[4px] xl:w-[630px] mx-5' style={{ textShadow: '0px 0px 6px #8D8D8D', }}>
               Na Konda Neon, simplificamos o processo de orçamento para tornar sua experiência única desde o início.
             </p>
           </div>
@@ -87,7 +87,7 @@ const Services:React.FC = () => {
                 <Reveal key={idx} mult={idx}>
                   <>
                     <div 
-                      className='relative flex justify-center items-center top-10 left-4 xl:left-8 w-16 h-16 rounded-md bg-gradient-conic'
+                      className='relative text-white flex justify-center items-center top-10 left-4 xl:left-8 w-16 h-16 rounded-md bg-gradient-conic'
                     >
                       { icon }
                     </div>
