@@ -48,7 +48,7 @@ const Services:React.FC = () => {
   return (
     <>
       {/* <Code /> */}
-      <section className='xl:h-[100vh] flex flex-col justify-center xl:mx-20 xl:mt-0 xl:my-0 my-10'> 
+      <section className='xl:h-[100vh] flex flex-col justify-center xl:mx-20 xl:mt-0 xl:my-0 my-10' style={{ height: '100vh' }}> 
         <Reveal>
           <div className='flex flex-col items-center space-y-[30px]'>
             <p 
