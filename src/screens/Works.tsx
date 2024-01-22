@@ -86,49 +86,53 @@ const Works:React.FC = () => {
 
   return (
     <section 
-      className='grid xl:grid-cols-2 grid-cols-1 xl:mx-20 mx-5 items-start justify-stretch xl:h-[100vh] h-full xl:mb-5'
+      className='grid xl:grid-cols-2 grid-cols-1 xl:mx-20 mx-5 items-center xl:h-[100vh] h-full xl:mb-5'
     > 
-      <Reveal>
-        <div className='flex flex-col xl:items-start items-center mx-20 justify-between xl:my-40'>
+        <div className=' flex h-full flex-col xl:items-start items-center mx-auto'>
           <div className='flex flex-col xl:space-y-0 space-y-6 justify-center h-full items-center'>
+            <Reveal>
             <h3 
               className='xl:text-start text-white text-center xl:text-[4rem] text-[3rem] color-white tracking-[6px]'
               style={{ textShadow: '0px 0px 4px #FFF', lineHeight: '110%' }}
             >
               Projetos já feitos!
             </h3>
-            <p className='2xl:text-start text-center text-md xl:text-[1.5rem] text-[1rem] color-[#A5A5A5] tracking-[2px]'>
+            <p className='2xl:text-start text-white text-center text-md xl:text-[1.5rem] text-[1rem] color-[#A5A5A5] tracking-[2px]'>
               Comece Seu Projeto Personalizado Agora!
             </p>
+            </Reveal>
           </div>
           <div 
             className='flex flex-col-reverse h-full xl:mt-44 w-full justify-center xl:items-start items-center' 
           >
-            <div 
-              className='flex w-[290px] border-b-[3px]' 
+            <Reveal>
+            <motion.div 
+              className='flex w-100 xl:mr-24 border-b-[3px]'
+              animate={{ translateX: 0 }}
               style={{ 
                 borderStyle: 'solid',
                 borderRadius: '100%',
                 borderImage: 'linear-gradient(to right, #63ABFD, #F6F7A0, #FF5E82) 1'
               }}
             />
+            </Reveal>
+            <Reveal>
             <div className='flex w-full items-center xl:justify-start justify-center space-x-2 xl:mt-[40px] mt-10'>
-              <ArrowRight size={32} color={'#63ABFD'} />
+              <ArrowRight size={42} color={'#63ABFD'} />
               <p 
-                className='xl:text-[20px] text-[12px] text-[#FF5E82] uppercase xl:tracking-[3px] tracking-[2px]' 
+                className='2xl:text-[24px] xl:text-[20px] text-[12px] text-[#FF5E82] uppercase xl:tracking-[3px] tracking-[2px]' 
                 style={{ textShadow: '0px 0px 4px #FB8486' }}
               >
                 Inicie seu Orçamento Agora!
               </p>
             </div>
-            <div />
+              </Reveal>
           </div>
         </div>
-      </Reveal>
 
-      <div className='w-full'>
-        <div className='flex xl:flex-row flex-col xl:justify-between justify-center items-center xl:space-y-0 space-y-4 xl:mb-10 my-10'>
-          <motion.div  
+      <div className=' w-full h-auto justify-center items-center'>
+        <div className='flex xl:flex-row flex-col xl:justify-between justify-center items-center xl:space-y-0 space-y-4 xl:mb-10 xl:my-0 my-10'>
+          {/* <motion.div  
             className="flex flex-row items-center xl:relative right-12"
             variants={container}
             initial="hidden"
@@ -152,9 +156,9 @@ const Works:React.FC = () => {
                 // swiper.slideNext()
               }}
             />
-          </motion.div>
+          </motion.div> */}
           
-          <Reveal>
+          {/* <Reveal> */}
             {/* <input
               type='range'
               className='w-full border-[3px] estilo h-1 z-10 cursor-pointer'
@@ -168,15 +172,15 @@ const Works:React.FC = () => {
               max={cards.length}
               step={1}
             /> */}
-            <div 
+            {/* <div 
               className='flex w-full border-b-[3px]' 
               style={{ 
                 borderStyle: 'solid',
                 borderRadius: '100%',
                 borderImage: 'linear-gradient(to right, #63ABFD, #F6F7A0, #FF5E82) 1'
               }}
-            />
-          </Reveal>
+            /> */}
+          {/* </Reveal> */}
         </div>
         
         <Reveal>
@@ -215,11 +219,13 @@ const Works:React.FC = () => {
                     >
                         <div className='flex flex-1'>
                           <div className='flex bg-white p-2'>
+                            <Reveal mult={idx}>
                             <Image 
                               alt={title} 
                               src={image} 
-                              className='object-cover h-[450px] xl:w-full w-[50vw]' 
+                              className='object-cover h-[550px] xl:w-full w-[50vw]' 
                             />
+                            </Reveal>
                           </div>
                         </div>
                         <p className='uppercase text-md text-[24px] text-white text-center'>
@@ -232,7 +238,6 @@ const Works:React.FC = () => {
             </Swiper>
           </div>
         </Reveal>
-
       </div>
 
     </section>

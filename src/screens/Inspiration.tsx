@@ -17,7 +17,7 @@ const Inspiration = () => {
     ];
 
   return (
-    <div className='flex flex-col xl:mt-0 mt-12 xl:h-[100vh] h-full xl:mx-20 mx-5 xl-mt-0'>
+    <div className='flex flex-col items-center justify-center xl:h-[60vh] h-full xl:mx-20 mx-5'>
         <div className='flex w-full flex-row justify-between items-center'>
             <Reveal>
                 <div 
@@ -32,18 +32,18 @@ const Inspiration = () => {
                     </p>
                 </div>
 
-                <div className='flex justify-center items-center'>
+                {/* <div className='flex justify-center items-center'>
                     <div className='flex border-1 rounded-full p-3 opacity-45'>
                         <ArrowLeft size={32} color='#f9f9f9'/>
                     </div>
                     <div className='border-1 rounded-full p-3 opacity-45'>
                         <ArrowRight size={32} color='#F9F9F9'/>
                     </div>
-                </div>
+                </div> */}
             </Reveal>
         </div>
 
-        <div className='grid xl:grid-cols-3 grid-cols-1 gap-10 w-full justify-center items-center xl:h-[100px] h-full my-[28px]'>
+        <div className='grid xl:grid-cols-3 grid-cols-1 gap-10 w-full justify-center items-start my-[28px]'>
             { neonImages.map((item, index) => {
                 return (
                     <Reveal key={index} mult={index}>
