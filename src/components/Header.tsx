@@ -48,11 +48,11 @@ const Header:React.FC = () => {
         <motion.h5 
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
-          className='uppercase w-full sm:text-[64px] text-[44px] tracking-[6px] text-bold'
+          className='uppercase text-white w-full sm:text-[64px] text-[44px] tracking-[6px] text-bold'
           transition={{ duration: 0.5 }}
           style={{
             textShadow: '0px 0px 6px #FFF',
-            ...gradient
+            // ...gradient
           }}
         >
           KONDA

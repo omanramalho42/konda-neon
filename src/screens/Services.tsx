@@ -68,7 +68,10 @@ const Services:React.FC = () => {
               </h2>
               <div className='w-full h-[2px] bg-gradient-linear rounded-xl xl:mt-0 mt-4' />
             </div>
-            <p className='text-[20px] text-center text-[#A8A6A7] tracking-[4px] xl:w-[630px] mx-5' style={{ textShadow: '0px 0px 6px #8D8D8D', }}>
+            <p 
+              className='text-[20px] text-center text-[#A8A6A7] tracking-[4px] xl:w-[630px] mx-5' 
+              style={{ textShadow: '0px 0px 6px #8D8D8D' }}
+            >
               Na Konda Neon, simplificamos o processo de orçamento para tornar sua experiência única desde o início.
             </p>
           </div>
@@ -104,7 +107,7 @@ const Services:React.FC = () => {
                           <li 
                             key={`${index+'-'+title}`}  
                             style={{ listStyleType: 'square', listStylePosition: 'inside', lineHeight: '110%' }} 
-                            className='2xl:text-[15px] text-lg text-black text-center'
+                            className='2xl:text-[15px] sm:text-lg text-black text-center'
                           >
                             { paragraph }
                           </li>

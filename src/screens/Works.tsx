@@ -26,7 +26,9 @@ import {
 
 import { container } from '@/constants/variants'
 
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react'
+import { A11y, Controller, EffectFade, Navigation, Pagination, Scrollbar, Virtual } from 'swiper/modules'
+
 
 const cards = [
   { title: 'EXTERIOR', image: CardImage },
@@ -35,8 +37,11 @@ const cards = [
 ]
 
 const Works:React.FC = () => {
-  const [progress, setProgress] = useState<string>('');
+  const swiper = useSwiper();
+  // store controlled swiper instance
+  const [controlledSwiper, setControlledSwiper] = useState(null);
   const [slidePerView, setSlidePerView] = useState(2);
+  
   const ref = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -134,7 +139,8 @@ const Works:React.FC = () => {
               color='#fff' 
               className='cursor-pointer z-10'
               onClick={() => {
-                console.log("clicando evento")
+                console.log("clicando evento");
+                // swiper.slideNext();
               }}
             />
             <ArrowRight 
@@ -142,13 +148,14 @@ const Works:React.FC = () => {
               color='#fff' 
               className='cursor-pointer z-10' 
               onClick={() => {
-                console.log("clicando evento")
+                console.log("clicando evento");
+                // swiper.slideNext()
               }}
             />
           </motion.div>
           
           <Reveal>
-            <input
+            {/* <input
               type='range'
               className='w-full border-[3px] estilo h-1 z-10 cursor-pointer'
               // @ts-ignore
@@ -160,6 +167,14 @@ const Works:React.FC = () => {
               min={0}
               max={cards.length}
               step={1}
+            /> */}
+            <div 
+              className='flex w-full border-b-[3px]' 
+              style={{ 
+                borderStyle: 'solid',
+                borderRadius: '100%',
+                borderImage: 'linear-gradient(to right, #63ABFD, #F6F7A0, #FF5E82) 1'
+              }}
             />
           </Reveal>
         </div>
@@ -170,17 +185,31 @@ const Works:React.FC = () => {
             className='flex overflow-x-hidden overflow-y-hidden scroll z-30 flex-row w-full grid-cols-2 gap-[30px]'
           >
             <Swiper
+              modules={[Navigation, Pagination, Scrollbar, A11y, Virtual]}
+              // effect="fade"
               slidesPerView={slidePerView}
               pagination={{ clickable: true }}
+              scrollbar={{ draggable: true }}
               allowSlideNext
               allowSlidePrev
               navigation
+              spaceBetween={20}
+              virtual
+              onSlideChange={() => {
+                console.log("Mudando de slide")
+              }}
+              onSwiper={(swiper) => console.log(swiper)}
             >
               {cards.map(({ image, title }, idx) => {
                 return (
-                  <SwiperSlide key={idx}>
+                  <SwiperSlide 
+                    key={idx} 
+                    zoom
+                    tag='carousel'
+                    virtualIndex={idx}
+                  >
                     <motion.div
-                      style={{ x }}
+                      // style={{ x }}
                       className='flex z-10 flex-col items-center' 
                       // key={idx}
                     >
@@ -189,7 +218,7 @@ const Works:React.FC = () => {
                             <Image 
                               alt={title} 
                               src={image} 
-                              className='object-cover h-[450px] w-full xl:w-[250px]' 
+                              className='object-cover h-[450px] xl:w-full w-[50vw]' 
                             />
                           </div>
                         </div>
