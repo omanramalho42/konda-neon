@@ -15,6 +15,7 @@ import Contact from '@/screens/Contact'
 import Inspiration from '@/screens/Inspiration'
 import Button from '@/components/Button'
 import { WhatsappLogo } from '@phosphor-icons/react'
+import AnimatedModal from '@/components/Modal'
 
 // import Hero from '@/components/Hero'
 
@@ -30,8 +31,14 @@ export default function Home() {
     <>
       {/* <Hero /> */}
       <StarsCanvas />
-      <div className='fixed bottom-10 right-10'>
+      <div className='fixed bottom-10 right-10 z-50'>
+        <AnimatedModal
+        title='Mande uma mensagem para nós'
+        content={<input className='p-2 bg-gray-800 placeholder:text-white text-white rounded-xl' />}
+        onSubmit={() => {}}
+        >
         <WhatsappLogo size={32} color='#FFF'/>
+        </AnimatedModal>
       </div>
       <main className='flex xl:h-[100vh-75px] xl:mt-[75px] xl:flex-row flex-col-reverse font-normal xl:ml-[80px] justify-center items-center text-center'>
         <section className='3xl:w-[50vw] w-full md:mt-[80px] mt-[35px]'>

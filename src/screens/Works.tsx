@@ -107,7 +107,7 @@ const Works:React.FC = () => {
           >
             <Reveal>
             <motion.div 
-              className='flex w-100 xl:mr-24 border-b-[3px]'
+              className='flex w-100 xl:mr-24 border-b-[3px]  sm:flex hidden sm:visible invisible'
               animate={{ translateX: 0 }}
               style={{ 
                 borderStyle: 'solid',
@@ -117,7 +117,7 @@ const Works:React.FC = () => {
             />
             </Reveal>
             <Reveal>
-            <div className='flex w-full items-center xl:justify-start justify-center space-x-2 xl:mt-[40px] mt-10'>
+            <div className='w-full sm:flex hidden sm:visible invisible items-center xl:justify-start justify-center space-x-2 xl:mt-[40px] mt-10'>
               <ArrowRight size={42} color={'#63ABFD'} />
               <p 
                 className='2xl:text-[24px] xl:text-[20px] text-[12px] text-[#FF5E82] uppercase xl:tracking-[3px] tracking-[2px]' 
@@ -214,16 +214,16 @@ const Works:React.FC = () => {
                   >
                     <motion.div
                       // style={{ x }}
-                      className='flex z-10 flex-col items-center' 
+                      className='flex z-10 flex-col items-center ' 
                       // key={idx}
                     >
-                        <div className='flex flex-1'>
+                        <div className='flex flex-1 '>
                           <div className='flex bg-white p-2'>
                             <Reveal mult={idx}>
                             <Image 
                               alt={title} 
                               src={image} 
-                              className='object-cover h-[550px] xl:w-full w-[50vw]' 
+                              className='object-cover h-[550px] xl:w-full w-[55vw]' 
                             />
                             </Reveal>
                           </div>
@@ -239,6 +239,33 @@ const Works:React.FC = () => {
           </div>
         </Reveal>
       </div>
+
+      <div 
+            className='flex mb-10 mx-auto flex-col-reverse h-full xl:mt-44 justify-center items-center' 
+          >
+            <Reveal>
+            <motion.div 
+              className='flex w-full xl:mr-24 border-b-[3px] sm:hidden visible sm:invisible'
+              animate={{ translateX: 0 }}
+              style={{ 
+                borderStyle: 'solid',
+                borderRadius: '100%',
+                borderImage: 'linear-gradient(to right, #63ABFD, #F6F7A0, #FF5E82) 1'
+              }}
+            />
+            </Reveal>
+            <Reveal>
+            <div className='w-full flex sm:hidden visible sm:invisible items-center xl:justify-start justify-center space-x-2 xl:mt-[40px] mt-10'>
+              <ArrowRight size={42} color={'#63ABFD'} />
+              <p 
+                className='2xl:text-[24px] xl:text-[20px] text-[12px] text-[#FF5E82] uppercase xl:tracking-[3px] tracking-[2px]' 
+                style={{ textShadow: '0px 0px 4px #FB8486' }}
+              >
+                Inicie seu Orçamento Agora!
+              </p>
+            </div>
+              </Reveal>
+          </div>
 
     </section>
   )
