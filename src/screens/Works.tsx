@@ -9,9 +9,9 @@ import Image from 'next/image'
 
 import { ArrowLeft, ArrowRight } from '@phosphor-icons/react'
 
-import CardImage from '../assets/img/work.png'
-import CardImage2 from '../assets/img/work2.png'
-import CardImage3 from '../assets/img/work3.png'
+import CardImage from '../assets/img/walpaper2.jpeg'
+import CardImage2 from '../assets/img/walpapper.jpeg'
+import CardImage3 from '../assets/img/walpaper3.jpeg'
 
 import '../styles/works.css';
 import Reveal from '@/components/Reveal'
