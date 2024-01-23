@@ -54,7 +54,7 @@ const Header:React.FC = () => {
           style={{
             background: 'linear-gradient(90deg, #6BB0F2, #F7D69D, #FF5E82)',
             WebkitBackgroundClip: 'text',
-            webKitTextFillColor: 'transparent',
+            // webKitTextFillColor: 'transparent',
             color: 'transparent',
           }}
         >
