@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import type { Metadata } from 'next'
 import { Bebas_Neue, Inter } from 'next/font/google'
 import './globals.css'
@@ -12,7 +13,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-
+import { FacebookPixelEvents } from "@/components/FacebookPixel"
 
 const inter = Inter({ subsets: ['latin'] })
 const bebasNeue = Bebas_Neue({
@@ -42,6 +43,9 @@ export default function RootLayout({
           <Header />
         </div>
         { children }
+        <Suspense fallback={null}>
+          <FacebookPixelEvents />
+        </Suspense>
         <div className=''>
           <Footer />
         </div>

@@ -56,17 +56,12 @@ const Works:React.FC = () => {
 
   useEffect(() => {
     if(isInView) {
-      console.log(scrollYProgress,'x');
-
-      console.log("teste");
-
       mainControls.start("visible");
       slideControls.start("visible");
     }
   },[isInView]);
   
   useEffect(() => {
-    console.log("aplicando efeito")
     function handleResize(){
       if(window.innerWidth < 650) {
         setSlidePerView(1)
