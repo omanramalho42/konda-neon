@@ -40,7 +40,7 @@ export default function Home() {
         <WhatsappLogo size={32} color='#FFF'/>
         </AnimatedModal>
       </div>
-      <main className='flex xl:h-[100vh-75px] xl:mt-[75px] xl:flex-row flex-col-reverse font-normal xl:ml-[80px] justify-center items-center text-center'>
+      <main className='flex xl:h-[100vh-75px] mt-[75px] xl:flex-row flex-col-reverse font-normal xl:ml-[80px] justify-center items-center text-center'>
         <section className='3xl:w-[50vw] w-full md:mt-[80px] mt-[35px]'>
 
           <div className='flex 3xl:mx-32 2xl:mx-20 mx-5 flex-col md:space-y-[37px] mb-[87px] space-y-6 xl:items-start items-center justify-start'>
@@ -51,7 +51,16 @@ export default function Home() {
               animate="visible"
               className='flex overflow-hidden xl:justify-start justify-center flex-wrap 2xl:w-[480px] z-10'
             >
-              {Array.from(letters.title).map((letter, index) => (
+                                               <p 
+                                                   style={{ 
+                                                    letterSpacing: '98%',
+                                                    textShadow: '#0px 0px 8px #FFC607' 
+                                                  }}
+                                 className='text-lg indent-[1px] text-[16px] uppercase xl:text-start text-center shadow-[#FFC607] text-[#FFC607] xl:tracking-[6px] tracking-[4px]'
+                                >
+            Impressão 3D de Neon LED para Projetos Personalizados e Rápidos.
+          </p>
+              {/* {Array.from(letters.title).map((letter, index) => (
                 <motion.p 
                   variants={child} 
                   key={index}
@@ -63,8 +72,9 @@ export default function Home() {
                 >
                   {letter === " " ? "\u00A0" : letter}
                 </motion.p>
-              ))}
+              ))} */}
             </motion.div>
+
 
             <motion.div 
               className='flex flex-col xl:h-[140px]'
@@ -141,7 +151,10 @@ export default function Home() {
               initial="hidden"
               animate="visible"
             >
-              {Array.from(letters.paragraph).map((letter, index) => (
+                                   <p className='text-gray-100 indent-[1px] mb-4 text-sm text-[23px] xl:text-start text-center uppercase tracking-[3.25px]'>
+            Konda Neon, onde transformamos sua visão em luz. Utilizando tecnologia de impressão 3D, tornamos o processo de criação de LEDs Neon personalizados mais rápido, acessível e exclusivo para cada cliente.
+          </p>
+              {/* {Array.from(letters.paragraph).map((letter, index) => (
                 <motion.p 
                   variants={child} 
                   key={index}
@@ -149,7 +162,7 @@ export default function Home() {
                 >
                   {letter === " " ? "\u00A0" : letter}
                 </motion.p>
-              ))}
+              ))} */}
             </motion.div>
           </div>
 

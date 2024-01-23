@@ -211,19 +211,20 @@ const Works:React.FC = () => {
                     zoom
                     tag='carousel'
                     virtualIndex={idx}
+                    className='py-5'
                   >
                     <motion.div
                       // style={{ x }}
-                      className='flex z-10 flex-col items-center ' 
+                      className='flex z-10 flex-col items-center' 
                       // key={idx}
                     >
-                        <div className='flex flex-1 '>
+                        <div className='flex flex-1 border-2'>
                           <div className='flex bg-white p-2'>
                             <Reveal mult={idx}>
                             <Image 
                               alt={title} 
                               src={image} 
-                              className='object-cover h-[550px] xl:w-full w-[55vw]' 
+                              className='object-cover h-[550px] xl:w-full  w-[55vw]' 
                             />
                             </Reveal>
                           </div>
