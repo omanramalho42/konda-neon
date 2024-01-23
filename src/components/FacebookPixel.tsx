@@ -10,8 +10,13 @@ export const FacebookPixelEvents: React.FC = () => {
     import("react-facebook-pixel")
       .then((x) => x.default)
       .then((ReactPixel) => {
-        ReactPixel.init("FACEBOOK_PIXEL_ID"); //don't forget to change this
+        ReactPixel.init("1385586748752732"); // Substitua pelo seu ID do pixel
         ReactPixel.pageView();
+
+        // Exemplo de rastreamento de um evento personalizado
+        ReactPixel.track("contact", {
+          customData: "qualquer dado adicional aqui",
+        });
       });
   }, [pathname, searchParams]);
 
