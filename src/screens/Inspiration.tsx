@@ -17,7 +17,7 @@ const Inspiration = () => {
     ];
 
   return (
-    <div className='flex flex-col items-center justify-center xl:h-[60vh] h-full xl:mx-20 mx-5'>
+    <div className='flex flex-col items-center justify-center h-full xl:mx-20 mx-5'>
         <div className='flex w-full flex-row justify-between items-center'>
             <Reveal>
                 <div 

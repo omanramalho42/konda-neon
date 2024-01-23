@@ -84,30 +84,40 @@ const Works:React.FC = () => {
     }
   },[]);
 
+  const handleWhatsAppClick = () => {
+    const phoneNumber = '85999930319';
+    const message = 'Gostaria de fazer um orçamento.';
+    
+    const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappLink, '_blank');
+  };
+
+
   return (
     <section 
-      className='grid xl:grid-cols-2 grid-cols-1 xl:mx-20 mx-5 items-center xl:h-[100vh] h-full xl:mb-5'
+      className='grid xl:grid-cols-2 grid-cols-1 xl:mx-20 mx-5 items-center 2xl:h-[100vh] h-full xl:mb-5'
     > 
-        <div className=' flex h-full flex-col xl:items-start items-center mx-auto'>
-          <div className='flex flex-col xl:space-y-0 space-y-6 justify-center h-full items-center'>
-            <Reveal>
-            <h3 
-              className='xl:text-start text-white text-center xl:text-[4rem] text-[3rem] color-white tracking-[6px]'
-              style={{ textShadow: '0px 0px 4px #FFF', lineHeight: '110%' }}
-            >
-              Projetos já feitos!
-            </h3>
-            <p className='2xl:text-start text-white text-center text-md xl:text-[1.5rem] text-[1rem] color-[#A5A5A5] tracking-[2px]'>
-              Comece Seu Projeto Personalizado Agora!
-            </p>
-            </Reveal>
-          </div>
-          <div 
-            className='flex flex-col-reverse h-full xl:mt-44 w-full justify-center xl:items-start items-center' 
+      <div className=' flex h-full flex-col xl:items-start items-center mx-auto'>
+        <div className='flex flex-col xl:space-y-0 space-y-6 justify-center h-full items-center'>
+          <Reveal>
+          <h3 
+            className='xl:text-start text-white text-center xl:text-[4rem] text-[3rem] color-white tracking-[6px]'
+            style={{ textShadow: '0px 0px 4px #FFF', lineHeight: '110%' }}
           >
-            <Reveal>
+            Projetos já feitos!
+          </h3>
+          <p className='2xl:text-start text-white text-center text-md xl:text-[1.5rem] text-[1rem] color-[#A5A5A5] tracking-[2px]'>
+            Comece Seu Projeto Personalizado Agora!
+          </p>
+          </Reveal>
+        </div>
+        <div 
+          className='flex flex-col-reverse h-full xl:mt-44 w-full justify-center xl:items-start items-center' 
+        >
+          <Reveal>
             <motion.div 
-              className='flex w-100 xl:mr-24 border-b-[3px]  sm:flex hidden sm:visible invisible'
+              className='w-100 xl:mr-24 border-b-[3px] sm:flex hidden sm:visible invisible'
               animate={{ translateX: 0 }}
               style={{ 
                 borderStyle: 'solid',
@@ -115,20 +125,27 @@ const Works:React.FC = () => {
                 borderImage: 'linear-gradient(to right, #63ABFD, #F6F7A0, #FF5E82) 1'
               }}
             />
-            </Reveal>
-            <Reveal>
-            <div className='w-full sm:flex hidden sm:visible invisible items-center xl:justify-start justify-center space-x-2 xl:mt-[40px] mt-10'>
-              <ArrowRight size={42} color={'#63ABFD'} />
+          </Reveal>
+          <Reveal>
+            <button 
+              onClick={handleWhatsAppClick} 
+              className='w-full sm:flex cursor-pointer hidden sm:visible invisible items-center xl:justify-start justify-center space-x-2 xl:mt-[40px] mt-10'
+            >
+              <ArrowRight 
+                size={42} 
+                color={'#63ABFD'} 
+                className='z-20' 
+              />
               <p 
-                className='2xl:text-[24px] xl:text-[20px] text-[12px] text-[#FF5E82] uppercase xl:tracking-[3px] tracking-[2px]' 
+                className='2xl:text-[24px] xl:text-[20px] z-20 text-[12px] text-[#FF5E82] uppercase xl:tracking-[3px] tracking-[2px]' 
                 style={{ textShadow: '0px 0px 4px #FB8486' }}
               >
                 Inicie seu Orçamento Agora!
               </p>
-            </div>
-              </Reveal>
-          </div>
+            </button>
+          </Reveal>
         </div>
+      </div>
 
       <div className=' w-full h-auto justify-center items-center'>
         <div className='flex xl:flex-row flex-col xl:justify-between justify-center items-center xl:space-y-0 space-y-4 xl:mb-10 xl:my-0 my-10'>
@@ -218,7 +235,7 @@ const Works:React.FC = () => {
                       className='flex z-10 flex-col items-center' 
                       // key={idx}
                     >
-                        <div className='flex flex-1 border-2'>
+                        <div className='flex flex-1'>
                           <div className='flex bg-white p-2'>
                             <Reveal mult={idx}>
                             <Image 
@@ -241,32 +258,37 @@ const Works:React.FC = () => {
         </Reveal>
       </div>
 
-      <div 
-            className='flex mb-10 mx-auto flex-col-reverse h-full xl:mt-44 justify-center items-center' 
+      <div className='flex mb-10 mx-auto flex-col-reverse h-full xl:mt-44 justify-center items-center sm:hidden visible sm:invisible'>
+        <Reveal>
+          <motion.div 
+            className='flex w-full xl:mr-24 border-b-[3px] sm:hidden visible sm:invisible'
+            animate={{ translateX: 0 }}
+            style={{ 
+              borderStyle: 'solid',
+              borderRadius: '100%',
+              borderImage: 'linear-gradient(to right, #63ABFD, #F6F7A0, #FF5E82) 1'
+            }}
+          />
+        </Reveal>
+        <Reveal>
+          <button 
+            onClick={handleWhatsAppClick} 
+            className='w-full flex sm:hidden visible sm:invisible items-center xl:justify-start justify-center space-x-2 xl:mt-[40px] mt-10'
           >
-            <Reveal>
-            <motion.div 
-              className='flex w-full xl:mr-24 border-b-[3px] sm:hidden visible sm:invisible'
-              animate={{ translateX: 0 }}
-              style={{ 
-                borderStyle: 'solid',
-                borderRadius: '100%',
-                borderImage: 'linear-gradient(to right, #63ABFD, #F6F7A0, #FF5E82) 1'
-              }}
+            <ArrowRight 
+              size={42} 
+              color={'#63ABFD'} 
+              className='z-20'
             />
-            </Reveal>
-            <Reveal>
-            <div className='w-full flex sm:hidden visible sm:invisible items-center xl:justify-start justify-center space-x-2 xl:mt-[40px] mt-10'>
-              <ArrowRight size={42} color={'#63ABFD'} />
-              <p 
-                className='2xl:text-[24px] xl:text-[20px] text-[12px] text-[#FF5E82] uppercase xl:tracking-[3px] tracking-[2px]' 
-                style={{ textShadow: '0px 0px 4px #FB8486' }}
-              >
-                Inicie seu Orçamento Agora!
-              </p>
-            </div>
-              </Reveal>
-          </div>
+            <p 
+              className='2xl:text-[24px] z-20 xl:text-[20px] text-[12px] text-[#FF5E82] uppercase xl:tracking-[3px] tracking-[2px]' 
+              style={{ textShadow: '0px 0px 4px #FB8486' }}
+            >
+              Inicie seu Orçamento Agora!
+            </p>
+          </button>
+        </Reveal>
+      </div>
 
     </section>
   )

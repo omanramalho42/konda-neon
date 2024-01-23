@@ -46,31 +46,42 @@ const Header:React.FC = () => {
       <div className='flex 2xl:ml-20 flex-row px-10 h-[75px] items-center justify-between p-[10px]'>
         
         <div className='flex flex-row space-x-4'>
-        <motion.h5 
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className='uppercase text-white w-auto sm:text-[64px] text-[44px] tracking-[6px] text-bold'
-          transition={{ duration: 0.5 }}
-          style={{
-            background: 'linear-gradient(90deg, #6BB0F2, #F7D69D, #FF5E82)',
-            WebkitBackgroundClip: 'text',
-            // webKitTextFillColor: 'transparent',
-            color: 'transparent',
-          }}
-        >
-          KONDA
-        </motion.h5>
-        <motion.h5 
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className='uppercase text-white w-auto sm:text-[64px] text-[44px] tracking-[6px] text-bold'
-          transition={{ duration: 0.5 }}
-          // style={{
-          //   textShadow: '0px 0px 6px #FFF'
-          // }}
-        >
-          NEON
-        </motion.h5>
+          <Link
+            activeClass="active" 
+            to="home"
+            spy={true} 
+            smooth={true} 
+            offset={50} 
+            duration={500} 
+            onSetActive={handleSetActive}
+            className='flex space-x-4 z-20 cursor-pointer'
+          >
+            <motion.h5 
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className='uppercase text-white w-auto sm:text-[64px] text-[44px] tracking-[6px] text-bold'
+              transition={{ duration: 0.5 }}
+              style={{
+                background: 'linear-gradient(90deg, #6BB0F2, #F7D69D, #FF5E82)',
+                WebkitBackgroundClip: 'text',
+                // webKitTextFillColor: 'transparent',
+                color: 'transparent',
+              }}
+            >
+              KONDA
+            </motion.h5>
+            <motion.h5 
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className='uppercase text-white w-auto sm:text-[64px] text-[44px] tracking-[6px] text-bold'
+              transition={{ duration: 0.5 }}
+              // style={{
+              //   textShadow: '0px 0px 6px #FFF'
+              // }}
+            >
+              NEON
+            </motion.h5>
+          </Link>
         </div>
         
         <motion.nav 

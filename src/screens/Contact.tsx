@@ -7,6 +7,15 @@ import Reveal from '@/components/Reveal'
 import Button from '@/components/Button'
 
 const Contact:React.FC = () => {
+    const handleWhatsAppClick = () => {
+        const phoneNumber = '85999930319';
+        const message = 'Gostaria de fazer um orçamento.';
+        
+        const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+    
+        window.open(whatsappLink, '_blank');
+      };
+
   return (
     <div className='xl:grid xl:grid-cols-2 flex-col-reverse flex xl:h-[100vh] h-full justify-center items-center xl:mx-20 mx-5 py-10'>
         <Reveal>
@@ -24,7 +33,7 @@ const Contact:React.FC = () => {
                     </p>
                 </div>
                 <div className='flex xl:justify-center justify-center items-center'>
-                    <Button />
+                    <Button onClick={handleWhatsAppClick} />
                 </div>
             </div>
         </Reveal>

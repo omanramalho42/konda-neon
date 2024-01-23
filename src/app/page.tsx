@@ -16,6 +16,7 @@ import Inspiration from '@/screens/Inspiration'
 import Button from '@/components/Button'
 import { WhatsappLogo } from '@phosphor-icons/react'
 import AnimatedModal from '@/components/Modal'
+import { Link } from 'react-scroll'
 
 // import Hero from '@/components/Hero'
 
@@ -27,20 +28,27 @@ const letters = {
 }
 
 export default function Home() {
+  const handleWhatsAppClick = () => {
+    const phoneNumber = '85999930319';
+    const message = 'Gostaria de fazer um orçamento.';
+    
+    const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappLink, '_blank');
+  };
+
   return (
     <>
       {/* <Hero /> */}
       <StarsCanvas />
       <div className='fixed bottom-10 right-10 z-50'>
-        <AnimatedModal
-        title='Mande uma mensagem para nós'
-        content={<input className='p-2 bg-gray-800 placeholder:text-white text-white rounded-xl' />}
-        onSubmit={() => {}}
+        <button
+          onClick={handleWhatsAppClick}
         >
-        <WhatsappLogo size={32} color='#FFF'/>
-        </AnimatedModal>
+          <WhatsappLogo size={32} color='#FFF'/>
+        </button>
       </div>
-      <main className='flex xl:h-[100vh-75px] mt-[75px] xl:flex-row flex-col-reverse font-normal xl:ml-[80px] justify-center items-center text-center'>
+      <main id='home' className='flex 2xl:h-[100vh-75px] mt-[75px] xl:flex-row flex-col-reverse font-normal xl:ml-[80px] 2xl:mb-0 mb-20 justify-center 2xl:items-center items-start text-center'>
         <section className='3xl:w-[50vw] w-full md:mt-[80px] mt-[35px]'>
 
           <div className='flex 3xl:mx-32 2xl:mx-20 mx-5 flex-col md:space-y-[37px] mb-[87px] space-y-6 xl:items-start items-center justify-start'>
@@ -167,7 +175,17 @@ export default function Home() {
           </div>
 
           <div className='flex justify-center my-[25px]'>
+            <Link
+              activeClass="active" 
+              to="contact" 
+              spy={true} 
+              smooth={true} 
+              offset={50} 
+              duration={500}
+              className='z-20 cursor-pointer'
+            >
               <Button />
+            </Link>
           </div>
         </section>
         <motion.div 
