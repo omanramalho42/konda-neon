@@ -30,7 +30,7 @@ const letters = {
 export default function Home() {
   const handleWhatsAppClick = () => {
     const phoneNumber = '85999930319';
-    const message = 'Gostaria de fazer um orçamento.';
+    const message = 'teste de fazer um orçamento.';
     
     const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
 
